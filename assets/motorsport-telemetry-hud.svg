@@ -1,281 +1,245 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="100%" height="100%">
   <defs>
-    <!-- Background Grid -->
-    <pattern id="telemetry-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#141923" stroke-width="0.7"/>
+    <!-- Background Technical Grid -->
+    <pattern id="hud-grid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#141923" stroke-width="0.7"/>
     </pattern>
 
-    <!-- Glowing Filters -->
-    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <linearGradient id="hud-frame-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#e10600" stop-opacity="0.85"/>
-      <stop offset="50%" stop-color="#1e293b" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.75"/>
+    <!-- Linear Border -->
+    <linearGradient id="hud-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#30363d"/>
+      <stop offset="50%" stop-color="#1e2329"/>
+      <stop offset="100%" stop-color="#30363d"/>
     </linearGradient>
 
-    <!-- RPM Tachometer Gradient: Cyan -> Amber -> Red -->
-    <linearGradient id="rpm-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8"/>
+    <!-- Tachometer Fill Gradient -->
+    <linearGradient id="tacho-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
       <stop offset="65%" stop-color="#f59e0b"/>
-      <stop offset="100%" stop-color="#e10600"/>
+      <stop offset="100%" stop-color="#ef4444"/>
     </linearGradient>
   </defs>
 
   <style>
     <![CDATA[
-    .mono {
-      font-family: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", Menlo, monospace;
+    .font-sans {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-    
+    .font-mono {
+      font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+    }
+
     /* Shift Lights Animation Sequence */
-    @keyframes rev-1 { 0%, 15% { fill: #1e293b; opacity: 0.3; } 20%, 85% { fill: #22c55e; opacity: 1; } 90%, 100% { fill: #38bdf8; opacity: 1; } }
-    @keyframes rev-2 { 0%, 30% { fill: #1e293b; opacity: 0.3; } 35%, 85% { fill: #eab308; opacity: 1; } 90%, 100% { fill: #38bdf8; opacity: 1; } }
-    @keyframes rev-3 { 0%, 45% { fill: #1e293b; opacity: 0.3; } 50%, 85% { fill: #e10600; opacity: 1; } 90%, 100% { fill: #38bdf8; opacity: 1; } }
-    @keyframes rev-4 { 0%, 60% { fill: #1e293b; opacity: 0.3; } 65%, 85% { fill: #e10600; opacity: 1; } 90%, 100% { fill: #38bdf8; opacity: 1; } }
-    @keyframes rev-shift { 0%, 80% { fill: #1e293b; opacity: 0.3; } 85%, 100% { fill: #38bdf8; opacity: 1; filter: drop-shadow(0 0 5px #38bdf8); } }
+    @keyframes s-light-1 { 0%, 15% { fill: #21262d; } 20%, 85% { fill: #10b981; } 90%, 100% { fill: #38bdf8; } }
+    @keyframes s-light-2 { 0%, 35% { fill: #21262d; } 40%, 85% { fill: #f59e0b; } 90%, 100% { fill: #38bdf8; } }
+    @keyframes s-light-3 { 0%, 55% { fill: #21262d; } 60%, 85% { fill: #ef4444; } 90%, 100% { fill: #38bdf8; } }
+    @keyframes s-light-4 { 0%, 75% { fill: #21262d; } 80%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 4px #38bdf8); } }
 
-    .led-1 { animation: rev-1 2.4s infinite ease-in-out; }
-    .led-2 { animation: rev-2 2.4s infinite ease-in-out; }
-    .led-3 { animation: rev-3 2.4s infinite ease-in-out; }
-    .led-4 { animation: rev-4 2.4s infinite ease-in-out; }
-    .led-shift { animation: rev-shift 2.4s infinite ease-in-out; }
+    .sl-1 { animation: s-light-1 2.2s infinite ease-in-out; }
+    .sl-2 { animation: s-light-2 2.2s infinite ease-in-out; }
+    .sl-3 { animation: s-light-3 2.2s infinite ease-in-out; }
+    .sl-4 { animation: s-light-4 2.2s infinite ease-in-out; }
 
-    /* Throttle and Brake Pedals Animation */
-    @keyframes pedal-throttle {
-      0% { height: 15px; y: 95px; }
-      40% { height: 85px; y: 25px; }
-      65% { height: 95px; y: 15px; }
-      80% { height: 10px; y: 100px; }
-      100% { height: 15px; y: 95px; }
+    /* Throttle & Brake Pedals */
+    @keyframes thr-anim {
+      0% { height: 18px; y: 72px; }
+      40% { height: 75px; y: 15px; }
+      65% { height: 82px; y: 8px; }
+      80% { height: 12px; y: 78px; }
+      100% { height: 18px; y: 72px; }
     }
-    @keyframes pedal-brake {
-      0% { height: 5px; y: 105px; }
-      40% { height: 0px; y: 110px; }
-      75% { height: 85px; y: 25px; }
-      90% { height: 40px; y: 70px; }
-      100% { height: 5px; y: 105px; }
+    @keyframes brk-anim {
+      0% { height: 8px; y: 82px; }
+      40% { height: 0px; y: 90px; }
+      75% { height: 75px; y: 15px; }
+      90% { height: 35px; y: 55px; }
+      100% { height: 8px; y: 82px; }
     }
-    .bar-thr { animation: pedal-throttle 3.2s infinite ease-in-out; }
-    .bar-brk { animation: pedal-brake 3.2s infinite ease-in-out; }
+    .pedal-t { animation: thr-anim 3.2s infinite ease-in-out; }
+    .pedal-b { animation: brk-anim 3.2s infinite ease-in-out; }
 
-    /* G-Force Friction Circle dot */
-    @keyframes g-move {
+    /* Friction Circle G-Cursor */
+    @keyframes g-cursor {
       0% { cx: 40px; cy: 40px; }
-      25% { cx: 58px; cy: 30px; }
-      50% { cx: 40px; cy: 62px; }
-      75% { cx: 22px; cy: 35px; }
+      25% { cx: 56px; cy: 28px; }
+      50% { cx: 40px; cy: 60px; }
+      75% { cx: 24px; cy: 34px; }
       100% { cx: 40px; cy: 40px; }
     }
-    .g-dot { animation: g-move 3.2s infinite ease-in-out; }
+    .g-dot { animation: g-cursor 3.2s infinite ease-in-out; }
 
-    /* Pulse radio badge */
-    @keyframes radio-pulse {
+    /* Radio Pulse */
+    @keyframes r-pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.35; }
     }
-    .radio-live { animation: radio-pulse 1.4s infinite; }
+    .live-pulse { animation: r-pulse 1.4s infinite; }
     ]]>
   </style>
 
-  <!-- Base Dashboard Panel -->
-  <rect x="2" y="2" width="896" height="316" rx="10" fill="#080a0f" stroke="url(#hud-frame-grad)" stroke-width="1.5"/>
-  <rect x="2" y="2" width="896" height="316" rx="10" fill="url(#telemetry-grid)"/>
+  <!-- Panel Base -->
+  <rect x="2" y="2" width="896" height="296" rx="10" fill="#0a0b0e" stroke="url(#hud-border)" stroke-width="1.5"/>
+  <rect x="2" y="2" width="896" height="296" rx="10" fill="url(#hud-grid)"/>
 
   <!-- Top Status Bar -->
-  <g class="mono">
-    <!-- Red indicator / status -->
-    <rect x="24" y="16" width="6" height="6" fill="#e10600" filter="url(#glow-red)"/>
-    <text x="38" y="22" font-size="10.5" font-weight="700" fill="#f8fafc" letter-spacing="1.5">MOTEC // PITWALL SIMULATION TELEMETRY ENGINE</text>
+  <g class="font-mono">
+    <!-- Red Live Beacon -->
+    <circle cx="28" cy="22" r="4.5" fill="#ef4444" class="live-pulse"/>
+    <text x="42" y="26" font-size="11.5" font-weight="700" fill="#f0f6fc" letter-spacing="1">MOTEC M800 // PITWALL SIMULATION TELEMETRY ENGINE</text>
 
-    <!-- Source feed -->
-    <text x="500" y="22" font-size="9.5" fill="#64748b" letter-spacing="1">DATA SOURCE: FORZA RAW UDP [PORT 20777]</text>
+    <!-- Source Port -->
+    <text x="510" y="26" font-size="10.5" fill="#8b949e">SOURCE: FORZA UDP [PORT 20777]</text>
 
-    <!-- Mode Badge -->
-    <g transform="translate(755, 11)">
-      <rect x="0" y="0" width="115" height="18" rx="3" fill="#13090b" stroke="#7f1d1d" stroke-width="1"/>
-      <text x="12" y="13" font-size="9" font-weight="700" fill="#f87171" letter-spacing="1">60Hz STREAM</text>
+    <!-- Rate Pill -->
+    <g transform="translate(745, 12)">
+      <rect x="0" y="0" width="125" height="20" rx="4" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <text x="12" y="14" font-size="9.5" font-weight="700" fill="#10b981" letter-spacing="1">60Hz REAL-TIME</text>
     </g>
   </g>
 
-  <line x1="24" y1="36" x2="876" y2="36" stroke="#1e293b" stroke-width="1"/>
+  <!-- Top Divider -->
+  <line x1="24" y1="40" x2="876" y2="40" stroke="#21262d" stroke-width="1"/>
 
-  <!-- F1 / MoTeC Shift Light Array (Top Center) -->
-  <g transform="translate(290, 48)">
-    <!-- 16 LED Shift Bar -->
-    <!-- Green LEDs (4) -->
-    <rect x="0"  y="0" width="16" height="8" rx="2" class="led-1" fill="#22c55e"/>
-    <rect x="20" y="0" width="16" height="8" rx="2" class="led-1" fill="#22c55e"/>
-    <rect x="40" y="0" width="16" height="8" rx="2" class="led-2" fill="#22c55e"/>
-    <rect x="60" y="0" width="16" height="8" rx="2" class="led-2" fill="#22c55e"/>
-    <!-- Yellow/Amber LEDs (4) -->
-    <rect x="84"  y="0" width="16" height="8" rx="2" class="led-2" fill="#eab308"/>
-    <rect x="104" y="0" width="16" height="8" rx="2" class="led-3" fill="#eab308"/>
-    <rect x="124" y="0" width="16" height="8" rx="2" class="led-3" fill="#eab308"/>
-    <rect x="144" y="0" width="16" height="8" rx="2" class="led-3" fill="#eab308"/>
-    <!-- Red LEDs (4) -->
-    <rect x="168" y="0" width="16" height="8" rx="2" class="led-4" fill="#e10600"/>
-    <rect x="188" y="0" width="16" height="8" rx="2" class="led-4" fill="#e10600"/>
-    <rect x="208" y="0" width="16" height="8" rx="2" class="led-4" fill="#e10600"/>
-    <rect x="228" y="0" width="16" height="8" rx="2" class="led-4" fill="#e10600"/>
-    <!-- Blue Shift LEDs (4) -->
-    <rect x="252" y="0" width="16" height="8" rx="2" class="led-shift" fill="#38bdf8"/>
-    <rect x="272" y="0" width="16" height="8" rx="2" class="led-shift" fill="#38bdf8"/>
-    <rect x="292" y="0" width="16" height="8" rx="2" class="led-shift" fill="#38bdf8"/>
-    <rect x="312" y="0" width="16" height="8" rx="2" class="led-shift" fill="#38bdf8"/>
+  <!-- Shift Lights Bar (Top Center) -->
+  <g transform="translate(300, 48)">
+    <!-- 16 Bold LEDs -->
+    <rect x="0"   y="0" width="16" height="7" rx="1.5" class="sl-1" fill="#10b981"/>
+    <rect x="20"  y="0" width="16" height="7" rx="1.5" class="sl-1" fill="#10b981"/>
+    <rect x="40"  y="0" width="16" height="7" rx="1.5" class="sl-1" fill="#10b981"/>
+    <rect x="60"  y="0" width="16" height="7" rx="1.5" class="sl-1" fill="#10b981"/>
+    <rect x="84"  y="0" width="16" height="7" rx="1.5" class="sl-2" fill="#f59e0b"/>
+    <rect x="104" y="0" width="16" height="7" rx="1.5" class="sl-2" fill="#f59e0b"/>
+    <rect x="124" y="0" width="16" height="7" rx="1.5" class="sl-2" fill="#f59e0b"/>
+    <rect x="144" y="0" width="16" height="7" rx="1.5" class="sl-2" fill="#f59e0b"/>
+    <rect x="168" y="0" width="16" height="7" rx="1.5" class="sl-3" fill="#ef4444"/>
+    <rect x="188" y="0" width="16" height="7" rx="1.5" class="sl-3" fill="#ef4444"/>
+    <rect x="208" y="0" width="16" height="7" rx="1.5" class="sl-3" fill="#ef4444"/>
+    <rect x="228" y="0" width="16" height="7" rx="1.5" class="sl-3" fill="#ef4444"/>
+    <rect x="252" y="0" width="16" height="7" rx="1.5" class="sl-4" fill="#38bdf8"/>
+    <rect x="272" y="0" width="16" height="7" rx="1.5" class="sl-4" fill="#38bdf8"/>
+    <rect x="292" y="0" width="16" height="7" rx="1.5" class="sl-4" fill="#38bdf8"/>
+    <rect x="312" y="0" width="16" height="7" rx="1.5" class="sl-4" fill="#38bdf8"/>
   </g>
 
-  <!-- ================= LEFT COLUMN: PEDAL TELEMETRY ================= -->
-  <g class="mono" transform="translate(30, 72)">
-    <text x="0" y="10" font-size="9.5" font-weight="700" fill="#64748b" letter-spacing="1">PEDAL INPUTS</text>
+  <!-- ================= LEFT POD: PEDALS & G-FORCE ================= -->
+  <g class="font-mono" transform="translate(28, 68)">
+    <text x="0" y="10" font-size="10.5" font-weight="700" fill="#8b949e" letter-spacing="1">PEDAL INPUTS &amp; G-FORCE</text>
 
-    <!-- Throttle Trace Container (Speed Cyan) -->
+    <!-- Throttle -->
     <g transform="translate(0, 18)">
-      <rect x="0" y="0" width="28" height="110" rx="3" fill="#0c121c" stroke="#1e293b" stroke-width="1"/>
-      <rect x="2" y="20" width="24" height="88" rx="2" fill="#38bdf8" class="bar-thr" filter="url(#glow-cyan)"/>
-      <text x="5" y="125" font-size="9" font-weight="700" fill="#38bdf8">THR</text>
+      <rect x="0" y="0" width="28" height="92" rx="4" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <rect x="2" y="18" width="24" height="72" rx="2" fill="#10b981" class="pedal-t"/>
+      <text x="4" y="108" font-size="10" font-weight="700" fill="#10b981">THR</text>
     </g>
 
-    <!-- Brake Trace Container (F1 Red) -->
+    <!-- Brake -->
     <g transform="translate(38, 18)">
-      <rect x="0" y="0" width="28" height="110" rx="3" fill="#13090b" stroke="#1e293b" stroke-width="1"/>
-      <rect x="2" y="90" width="24" height="18" rx="2" fill="#e10600" class="bar-brk" filter="url(#glow-red)"/>
-      <text x="5" y="125" font-size="9" font-weight="700" fill="#f87171">BRK</text>
+      <rect x="0" y="0" width="28" height="92" rx="4" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <rect x="2" y="70" width="24" height="20" rx="2" fill="#ef4444" class="pedal-b"/>
+      <text x="4" y="108" font-size="10" font-weight="700" fill="#ef4444">BRK</text>
     </g>
 
-    <!-- Steering and G-Force Friction Circle -->
+    <!-- Friction Circle -->
     <g transform="translate(85, 18)">
-      <rect x="0" y="0" width="80" height="80" rx="6" fill="#0b0e14" stroke="#1e293b" stroke-width="1"/>
-      <circle cx="40" cy="40" r="32" fill="none" stroke="#1f2937" stroke-width="1" stroke-dasharray="2 2"/>
-      <circle cx="40" cy="40" r="16" fill="none" stroke="#1f2937" stroke-width="1"/>
-      <line x1="40" y1="6" x2="40" y2="74" stroke="#1e293b" stroke-width="1"/>
-      <line x1="6" y1="40" x2="74" y2="40" stroke="#1e293b" stroke-width="1"/>
-
-      <!-- Animated G-force cursor (Electric Cyan) -->
-      <circle cx="40" cy="40" r="4.5" fill="#38bdf8" class="g-dot" filter="url(#glow-cyan)"/>
-      
-      <text x="8" y="98" font-size="8.5" fill="#94a3b8">LAT: <tspan fill="#f8fafc" font-weight="700">3.8G</tspan></text>
-      <text x="8" y="112" font-size="8.5" fill="#94a3b8">LON: <tspan fill="#f8fafc" font-weight="700">-2.4G</tspan></text>
-      <text x="8" y="125" font-size="8" fill="#64748b">FRICTION CIRCLE</text>
+      <rect x="0" y="0" width="90" height="92" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <circle cx="45" cy="46" r="34" fill="none" stroke="#21262d" stroke-width="1" stroke-dasharray="2 2"/>
+      <circle cx="45" cy="46" r="17" fill="none" stroke="#21262d" stroke-width="1"/>
+      <line x1="45" y1="8" x2="45" y2="84" stroke="#21262d" stroke-width="1"/>
+      <line x1="8" y1="46" x2="82" y2="46" stroke="#21262d" stroke-width="1"/>
+      <circle cx="45" cy="46" r="5" fill="#38bdf8" class="g-dot"/>
+      <text x="4" y="108" font-size="9.5" font-weight="600" fill="#8b949e">3.8G LAT · 2.4G LON</text>
     </g>
   </g>
 
-  <!-- ================= CENTER COLUMN: MAIN INSTRUMENT CLUSTER ================= -->
-  <g class="mono" transform="translate(235, 72)">
-    <!-- Big Digital Instrument Cluster Box -->
-    <rect x="0" y="0" width="375" height="150" rx="8" fill="#090d14" stroke="#1e293b" stroke-width="1.2"/>
+  <!-- ================= CENTER CLUSTER: GEAR, SPEED, RPM ================= -->
+  <g class="font-mono" transform="translate(235, 68)">
+    <rect x="0" y="0" width="375" height="136" rx="8" fill="#11141b" stroke="#21262d" stroke-width="1.2"/>
 
-    <!-- GEAR DISPLAY -->
-    <g transform="translate(24, 18)">
-      <text x="0" y="14" font-size="10" font-weight="700" fill="#64748b" letter-spacing="1">CURRENT GEAR</text>
-      <text x="8" y="98" font-size="86" font-weight="900" fill="#f8fafc" letter-spacing="-2">6</text>
+    <!-- Current Gear -->
+    <g transform="translate(20, 16)">
+      <text x="0" y="12" font-size="10.5" font-weight="700" fill="#8b949e" letter-spacing="1">CURRENT GEAR</text>
+      <text x="8" y="92" font-size="84" font-weight="900" fill="#ffffff" letter-spacing="-2">6</text>
     </g>
 
-    <!-- VERTICAL DIVIDER -->
-    <line x1="125" y1="20" x2="125" y2="135" stroke="#1e293b" stroke-width="1"/>
+    <line x1="125" y1="16" x2="125" y2="120" stroke="#21262d" stroke-width="1"/>
 
-    <!-- SPEED and RPM (Crisp Racing White & F1 Tachometer) -->
-    <g transform="translate(145, 18)">
-      <text x="0" y="14" font-size="10" font-weight="700" fill="#64748b" letter-spacing="1">VELOCITY &amp; RPM</text>
-      <text x="0" y="58" font-size="44" font-weight="900" fill="#ffffff">284 <tspan font-size="16" fill="#94a3b8" font-weight="600">KM/H</tspan></text>
-      <text x="0" y="86" font-size="18" font-weight="700" fill="#f1f5f9">11,840 <tspan font-size="11" fill="#64748b">RPM</tspan></text>
+    <!-- Speed and RPM -->
+    <g transform="translate(145, 16)">
+      <text x="0" y="12" font-size="10.5" font-weight="700" fill="#8b949e" letter-spacing="1">VELOCITY &amp; RPM</text>
+      <text x="0" y="52" font-size="44" font-weight="900" fill="#ffffff">284 <tspan font-size="16" font-weight="600" fill="#8b949e">KM/H</tspan></text>
+      <text x="0" y="78" font-size="17" font-weight="700" fill="#f0f6fc">11,840 <tspan font-size="11" fill="#8b949e">RPM</tspan></text>
 
-      <!-- RPM Progressive Bar -->
-      <rect x="0" y="96" width="205" height="6" rx="2" fill="#1e293b"/>
-      <rect x="0" y="96" width="176" height="6" rx="2" fill="url(#rpm-grad)"/>
-    </g>
+      <!-- Tacho Bar -->
+      <rect x="0" y="86" width="205" height="6" rx="2" fill="#21262d"/>
+      <rect x="0" y="86" width="176" height="6" rx="2" fill="url(#tacho-grad)"/>
 
-    <!-- LIVE DELTA BOX (Sector Purple) -->
-    <g transform="translate(145, 115)">
-      <text x="0" y="18" font-size="10" fill="#94a3b8">LAP DELTA:</text>
-      <text x="75" y="19" font-size="14" font-weight="800" fill="#c084fc" filter="url(#glow-purple)">-0.248s</text>
-      <text x="145" y="18" font-size="9" font-weight="700" fill="#a855f7">[S2 PURPLE]</text>
+      <!-- Lap Delta -->
+      <text x="0" y="110" font-size="11" fill="#8b949e">LAP DELTA: <tspan fill="#c084fc" font-weight="700">-0.248s</tspan> <tspan fill="#a855f7" font-weight="700">[S2 PURPLE]</tspan></text>
     </g>
   </g>
 
-  <!-- ================= RIGHT COLUMN: TIRE THERMAL AND DEGRADATION ================= -->
-  <g class="mono" transform="translate(635, 72)">
-    <text x="0" y="10" font-size="9.5" font-weight="700" fill="#64748b" letter-spacing="1">APEX AI // TIRE THERMAL MATRIX</text>
+  <!-- ================= RIGHT POD: TIRE THERMALS ================= -->
+  <g class="font-mono" transform="translate(635, 68)">
+    <text x="0" y="10" font-size="10.5" font-weight="700" fill="#8b949e" letter-spacing="1">TIRE THERMAL MATRIX (°C)</text>
 
-    <!-- 4 Tires Diagram -->
-    <g transform="translate(0, 22)">
-      <!-- FRONT-LEFT (FL - Critical Hot Red) -->
+    <g transform="translate(0, 18)">
+      <!-- FL -->
       <g transform="translate(0, 0)">
-        <rect x="0" y="0" width="105" height="52" rx="4" fill="#140a0b" stroke="#7f1d1d" stroke-width="1"/>
-        <text x="10" y="16" font-size="9" font-weight="700" fill="#f87171">FL // 106°C</text>
-        <text x="10" y="32" font-size="8.5" fill="#94a3b8">WEAR: <tspan fill="#f87171" font-weight="700">76%</tspan></text>
-        <rect x="10" y="38" width="85" height="4" rx="1.5" fill="#1e293b"/>
-        <rect x="10" y="38" width="65" height="4" rx="1.5" fill="#ef4444"/>
+        <rect x="0" y="0" width="110" height="48" rx="4" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+        <text x="10" y="18" font-size="11" font-weight="700" fill="#ef4444">FL // 106°C</text>
+        <text x="10" y="34" font-size="10" fill="#8b949e">WEAR: <tspan fill="#ef4444" font-weight="700">76%</tspan></text>
+        <rect x="10" y="38" width="90" height="3" rx="1.5" fill="#21262d"/>
+        <rect x="10" y="38" width="68" height="3" rx="1.5" fill="#ef4444"/>
       </g>
 
-      <!-- FRONT-RIGHT (FR - Warning Amber) -->
-      <g transform="translate(120, 0)">
-        <rect x="0" y="0" width="105" height="52" rx="4" fill="#14110a" stroke="#78350f" stroke-width="1"/>
-        <text x="10" y="16" font-size="9" font-weight="700" fill="#eab308">FR // 101°C</text>
-        <text x="10" y="32" font-size="8.5" fill="#94a3b8">WEAR: <tspan fill="#eab308" font-weight="700">62%</tspan></text>
-        <rect x="10" y="38" width="85" height="4" rx="1.5" fill="#1e293b"/>
-        <rect x="10" y="38" width="53" height="4" rx="1.5" fill="#eab308"/>
+      <!-- FR -->
+      <g transform="translate(125, 0)">
+        <rect x="0" y="0" width="110" height="48" rx="4" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+        <text x="10" y="18" font-size="11" font-weight="700" fill="#f59e0b">FR // 101°C</text>
+        <text x="10" y="34" font-size="10" fill="#8b949e">WEAR: <tspan fill="#f59e0b" font-weight="700">62%</tspan></text>
+        <rect x="10" y="38" width="90" height="3" rx="1.5" fill="#21262d"/>
+        <rect x="10" y="38" width="56" height="3" rx="1.5" fill="#f59e0b"/>
       </g>
 
-      <!-- REAR-LEFT (RL - Optimal Ice Cyan) -->
-      <g transform="translate(0, 60)">
-        <rect x="0" y="0" width="105" height="52" rx="4" fill="#09141f" stroke="#0369a1" stroke-width="1"/>
-        <text x="10" y="16" font-size="9" font-weight="700" fill="#38bdf8">RL // 98°C</text>
-        <text x="10" y="32" font-size="8.5" fill="#94a3b8">WEAR: <tspan fill="#38bdf8" font-weight="700">45%</tspan></text>
-        <rect x="10" y="38" width="85" height="4" rx="1.5" fill="#1e293b"/>
-        <rect x="10" y="38" width="38" height="4" rx="1.5" fill="#38bdf8"/>
+      <!-- RL -->
+      <g transform="translate(0, 56)">
+        <rect x="0" y="0" width="110" height="48" rx="4" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+        <text x="10" y="18" font-size="11" font-weight="700" fill="#10b981">RL // 98°C</text>
+        <text x="10" y="34" font-size="10" fill="#8b949e">WEAR: <tspan fill="#10b981" font-weight="700">45%</tspan></text>
+        <rect x="10" y="38" width="90" height="3" rx="1.5" fill="#21262d"/>
+        <rect x="10" y="38" width="40" height="3" rx="1.5" fill="#10b981"/>
       </g>
 
-      <!-- REAR-RIGHT (RR - Optimal Ice Cyan) -->
-      <g transform="translate(120, 60)">
-        <rect x="0" y="0" width="105" height="52" rx="4" fill="#09141f" stroke="#0369a1" stroke-width="1"/>
-        <text x="10" y="16" font-size="9" font-weight="700" fill="#38bdf8">RR // 99°C</text>
-        <text x="10" y="32" font-size="8.5" fill="#94a3b8">WEAR: <tspan fill="#38bdf8" font-weight="700">48%</tspan></text>
-        <rect x="10" y="38" width="85" height="4" rx="1.5" fill="#1e293b"/>
-        <rect x="10" y="38" width="41" height="4" rx="1.5" fill="#38bdf8"/>
+      <!-- RR -->
+      <g transform="translate(125, 56)">
+        <rect x="0" y="0" width="110" height="48" rx="4" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+        <text x="10" y="18" font-size="11" font-weight="700" fill="#10b981">RR // 99°C</text>
+        <text x="10" y="34" font-size="10" fill="#8b949e">WEAR: <tspan fill="#10b981" font-weight="700">48%</tspan></text>
+        <rect x="10" y="38" width="90" height="3" rx="1.5" fill="#21262d"/>
+        <rect x="10" y="38" width="43" height="3" rx="1.5" fill="#10b981"/>
       </g>
     </g>
   </g>
 
-  <!-- ================= BOTTOM RADIO BAR: PITWALL VOICE AI ================= -->
-  <g class="mono" transform="translate(24, 240)">
-    <rect x="0" y="0" width="852" height="64" rx="6" fill="#080b12" stroke="#1e293b" stroke-width="1"/>
+  <!-- ================= RADIO CALLOUT BAR (HIGH LEGIBILITY) ================= -->
+  <g class="font-mono" transform="translate(24, 222)">
+    <rect x="0" y="0" width="852" height="58" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
 
-    <!-- Radio Indicator (F1 Live Radio Red) -->
-    <g transform="translate(16, 16)">
-      <circle cx="8" cy="8" r="4.5" fill="#e10600" class="radio-live" filter="url(#glow-red)"/>
-      <text x="20" y="12" font-size="9" font-weight="700" fill="#f87171" letter-spacing="1">PIT-TO-CAR RADIO [GROQ AI VOICE &lt;150ms]</text>
+    <!-- Radio Indicator -->
+    <g transform="translate(16, 12)">
+      <circle cx="8" cy="8" r="4" fill="#ef4444" class="live-pulse"/>
+      <text x="20" y="12" font-size="10" font-weight="700" fill="#f87171" letter-spacing="1">PIT-TO-CAR RADIO // GROQ AI VOICE &lt;150ms</text>
     </g>
 
-    <!-- Radio Transmission Subtitle (Clean White & Amber) -->
-    <text x="36" y="48" font-size="10.5" font-weight="600" fill="#f8fafc">
-      CREW CHIEF AI: <tspan fill="#f59e0b">"Box this lap for Mediums. FL thermal is 106°C with 76% wear — cliff imminent."</tspan>
+    <!-- Subtitle (Clear, Readable Font) -->
+    <text x="36" y="44" font-size="11.5" font-weight="600" fill="#f0f6fc">
+      CREW CHIEF AI: <tspan fill="#52e3a1">"Box this lap for Mediums. FL thermal 106°C (76% wear) — cliff imminent."</tspan>
     </text>
 
-    <!-- End Specs -->
-    <g transform="translate(725, 16)">
-      <text x="0" y="12" font-size="8.5" fill="#64748b">LATENCY: <tspan fill="#38bdf8" font-weight="700">128ms</tspan></text>
-      <text x="0" y="30" font-size="8.5" fill="#64748b">PACKET DROP: <tspan fill="#38bdf8" font-weight="700">0.00%</tspan></text>
+    <!-- Specs -->
+    <g transform="translate(730, 14)">
+      <text x="0" y="11" font-size="10" fill="#8b949e">LATENCY: <tspan fill="#38bdf8" font-weight="700">128ms</tspan></text>
+      <text x="0" y="27" font-size="10" fill="#8b949e">PACKET DROP: <tspan fill="#10b981" font-weight="700">0.00%</tspan></text>
     </g>
   </g>
 </svg>

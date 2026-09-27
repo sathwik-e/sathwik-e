@@ -1,51 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 22" width="100%" height="22">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 16" width="100%" height="16">
   <defs>
-    <!-- Motorsport Livery Gradient: F1 Crimson, Speed White, Electric Cyan -->
-    <linearGradient id="stripe-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#e10600" stop-opacity="0"/>
-      <stop offset="15%" stop-color="#e10600" stop-opacity="0.9"/>
-      <stop offset="48%" stop-color="#f8fafc" stop-opacity="1"/>
-      <stop offset="52%" stop-color="#38bdf8" stop-opacity="1"/>
-      <stop offset="85%" stop-color="#e10600" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#e10600" stop-opacity="0"/>
+    <linearGradient id="clean-stripe" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#21262d" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#21262d" stop-opacity="1"/>
+      <stop offset="45%" stop-color="#10b981" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#52e3a1" stop-opacity="1"/>
+      <stop offset="55%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="80%" stop-color="#21262d" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#21262d" stop-opacity="0"/>
     </linearGradient>
-
-    <!-- Carbon Fiber / Chequered Flag Grid -->
-    <pattern id="checkers" width="12" height="12" patternUnits="userSpaceOnUse">
-      <rect width="6" height="6" fill="#1f2430" fill-opacity="0.6"/>
-      <rect x="6" y="6" width="6" height="6" fill="#1f2430" fill-opacity="0.6"/>
-    </pattern>
   </defs>
 
-  <style>
-    <![CDATA[
-    @keyframes sweep {
-      0% { stroke-dashoffset: 0; }
-      100% { stroke-dashoffset: -160; }
-    }
-    .sweep-line {
-      stroke-dasharray: 16 8;
-      animation: sweep 3.6s linear infinite;
-    }
-    ]]>
-  </style>
+  <!-- Technical Axis Line -->
+  <line x1="20" y1="8" x2="880" y2="8" stroke="url(#clean-stripe)" stroke-width="1.2"/>
 
-  <!-- Background Chequered Pattern subtle strip -->
-  <rect x="100" y="7" width="700" height="8" fill="url(#checkers)"/>
-
-  <!-- Underlying Carbon Track Rail -->
-  <line x1="20" y1="11" x2="880" y2="11" stroke="#1c202c" stroke-width="1"/>
-
-  <!-- Animated Racing Telemetry Sweep -->
-  <line x1="80" y1="11" x2="820" y2="11" stroke="url(#stripe-grad)" stroke-width="2" class="sweep-line"/>
-
-  <!-- Left Speed Tick (F1 Red) -->
-  <polygon points="76,6 84,11 76,16" fill="#e10600"/>
-
-  <!-- Center Diamond Nodes (Championship Chequer) -->
-  <rect x="445" y="6" width="10" height="10" fill="#090b10" stroke="#e10600" stroke-width="1.5" transform="rotate(45 450 11)"/>
-  <circle cx="450" cy="11" r="2" fill="#38bdf8"/>
-
-  <!-- Right Speed Tick (Cyan) -->
-  <polygon points="824,6 816,11 824,16" fill="#38bdf8"/>
+  <!-- Center Diamond Indicator -->
+  <rect x="446" y="4" width="8" height="8" fill="#0a0b0e" stroke="#52e3a1" stroke-width="1.2" transform="rotate(45 450 8)"/>
+  <circle cx="450" cy="8" r="1.5" fill="#52e3a1"/>
 </svg>

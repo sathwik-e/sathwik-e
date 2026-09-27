@@ -1,187 +1,131 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="100%" height="100%">
   <defs>
-    <!-- Background Technical Grid Pattern -->
-    <pattern id="mfd-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#171c26" stroke-width="0.75" stroke-opacity="0.8"/>
-      <circle cx="24" cy="24" r="0.75" fill="#e10600" fill-opacity="0.25"/>
+    <!-- Background Technical Grid -->
+    <pattern id="clean-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#161b22" stroke-width="0.75"/>
     </pattern>
 
-    <!-- Radial Cockpit Glow (F1 Red & Speed Cyan) -->
-    <radialGradient id="cockpit-glow" cx="50%" cy="15%" r="70%">
-      <stop offset="0%" stop-color="#e10600" stop-opacity="0.10"/>
-      <stop offset="50%" stop-color="#0284c7" stop-opacity="0.04"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    <!-- Subtle Premium Glow -->
+    <radialGradient id="subtle-glow" cx="50%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.08"/>
+      <stop offset="60%" stop-color="#0ea5e9" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#0a0b0e" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Linear Border Gradient -->
-    <linearGradient id="mfd-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#e10600" stop-opacity="0.9"/>
-      <stop offset="50%" stop-color="#1e293b" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.8"/>
+    <!-- Crisp Card Border -->
+    <linearGradient id="border-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#30363d"/>
+      <stop offset="50%" stop-color="#21262d"/>
+      <stop offset="100%" stop-color="#30363d"/>
     </linearGradient>
-
-    <!-- Neon Glow Filter -->
-    <filter id="mfd-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
   <style>
     <![CDATA[
-    .mono {
-      font-family: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", Menlo, monospace;
+    .font-sans {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .font-mono {
+      font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
     }
 
-    /* Shift Light Sequential Cascade (Authentic F1 LED Pattern) */
-    @keyframes rev-1 {
-      0%, 15% { fill: #1e293b; opacity: 0.3; }
-      20%, 85% { fill: #22c55e; opacity: 1; filter: drop-shadow(0 0 3px #22c55e); }
-      90%, 100% { fill: #38bdf8; opacity: 1; }
-    }
-    @keyframes rev-2 {
-      0%, 35% { fill: #1e293b; opacity: 0.3; }
-      40%, 85% { fill: #eab308; opacity: 1; filter: drop-shadow(0 0 3px #eab308); }
-      90%, 100% { fill: #38bdf8; opacity: 1; }
-    }
-    @keyframes rev-3 {
-      0%, 55% { fill: #1e293b; opacity: 0.3; }
-      60%, 85% { fill: #e10600; opacity: 1; filter: drop-shadow(0 0 4px #e10600); }
-      90%, 100% { fill: #38bdf8; opacity: 1; }
-    }
-    @keyframes rev-4 {
-      0%, 75% { fill: #1e293b; opacity: 0.3; }
-      80%, 100% { fill: #38bdf8; opacity: 1; filter: drop-shadow(0 0 5px #38bdf8); }
-    }
+    /* Shift Light Cascade */
+    @keyframes led-seq-1 { 0%, 20% { fill: #21262d; } 25%, 85% { fill: #10b981; } 90%, 100% { fill: #38bdf8; } }
+    @keyframes led-seq-2 { 0%, 40% { fill: #21262d; } 45%, 85% { fill: #f59e0b; } 90%, 100% { fill: #38bdf8; } }
+    @keyframes led-seq-3 { 0%, 60% { fill: #21262d; } 65%, 85% { fill: #ef4444; } 90%, 100% { fill: #38bdf8; } }
+    @keyframes led-seq-4 { 0%, 80% { fill: #21262d; } 85%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 4px #38bdf8); } }
 
-    .l-1 { animation: rev-1 2.2s infinite ease-in-out; }
-    .l-2 { animation: rev-2 2.2s infinite ease-in-out; }
-    .l-3 { animation: rev-3 2.2s infinite ease-in-out; }
-    .l-4 { animation: rev-4 2.2s infinite ease-in-out; }
+    .led-1 { animation: led-seq-1 2.2s infinite ease-in-out; }
+    .led-2 { animation: led-seq-2 2.2s infinite ease-in-out; }
+    .led-3 { animation: led-seq-3 2.2s infinite ease-in-out; }
+    .led-4 { animation: led-seq-4 2.2s infinite ease-in-out; }
 
-    /* Red Beacon Pulse */
-    @keyframes beacon-pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+    @keyframes live-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.95); }
     }
-    .pulse-dot {
-      animation: beacon-pulse 1.6s infinite ease-in-out;
-    }
+    .pulse { animation: live-pulse 2s infinite ease-in-out; transform-origin: 40px 30px; }
     ]]>
   </style>
 
-  <!-- Base Panel Shell -->
-  <rect x="2" y="2" width="896" height="246" rx="10" fill="#080a0f" stroke="url(#mfd-border)" stroke-width="1.5"/>
-  <rect x="2" y="2" width="896" height="246" rx="10" fill="url(#mfd-grid)"/>
-  <rect x="2" y="2" width="896" height="246" rx="10" fill="url(#cockpit-glow)"/>
+  <!-- Card Shell -->
+  <rect x="2" y="2" width="896" height="236" rx="10" fill="#0a0b0e" stroke="url(#border-stroke)" stroke-width="1.5"/>
+  <rect x="2" y="2" width="896" height="236" rx="10" fill="url(#clean-grid)"/>
+  <rect x="2" y="2" width="896" height="236" rx="10" fill="url(#subtle-glow)"/>
 
-  <!-- Racing Cockpit Corner Brackets -->
-  <path d="M 14 30 L 14 14 L 30 14" fill="none" stroke="#e10600" stroke-width="2"/>
-  <path d="M 886 30 L 886 14 L 870 14" fill="none" stroke="#38bdf8" stroke-width="2"/>
-  <path d="M 14 220 L 14 236 L 30 236" fill="none" stroke="#e10600" stroke-width="2"/>
-  <path d="M 886 220 L 886 236 L 870 236" fill="none" stroke="#38bdf8" stroke-width="2"/>
+  <!-- Top Metadata Bar -->
+  <g class="font-mono">
+    <!-- Live Beacon -->
+    <circle cx="40" cy="30" r="4" fill="#10b981" class="pulse"/>
+    <text x="52" y="34" font-size="11" font-weight="600" fill="#8b949e" letter-spacing="1">S. ELAPROLU // SYSTEMS &amp; MOTORSPORT SOFTWARE</text>
 
-  <!-- Top MFD Header Bar -->
-  <g class="mono" transform="translate(30, 20)">
-    <!-- Red Beacon -->
-    <circle cx="6" cy="6" r="4" fill="#e10600" class="pulse-dot" filter="url(#mfd-glow)"/>
-    <text x="18" y="10" font-size="10" font-weight="700" fill="#f8fafc" letter-spacing="1.5">MOTEC M800 // ECU BOOT SEQUENCER</text>
-
-    <!-- F1 Shift Light Array (16 LEDs across center) -->
-    <g transform="translate(260, 0)">
-      <!-- Green LEDs (4) -->
-      <rect x="0"  y="0" width="13" height="7" rx="1.5" class="l-1" fill="#22c55e"/>
-      <rect x="16" y="0" width="13" height="7" rx="1.5" class="l-1" fill="#22c55e"/>
-      <rect x="32" y="0" width="13" height="7" rx="1.5" class="l-1" fill="#22c55e"/>
-      <rect x="48" y="0" width="13" height="7" rx="1.5" class="l-1" fill="#22c55e"/>
-      <!-- Amber LEDs (4) -->
-      <rect x="68"  y="0" width="13" height="7" rx="1.5" class="l-2" fill="#eab308"/>
-      <rect x="84"  y="0" width="13" height="7" rx="1.5" class="l-2" fill="#eab308"/>
-      <rect x="100" y="0" width="13" height="7" rx="1.5" class="l-2" fill="#eab308"/>
-      <rect x="116" y="0" width="13" height="7" rx="1.5" class="l-2" fill="#eab308"/>
-      <!-- F1 Red LEDs (4) -->
-      <rect x="136" y="0" width="13" height="7" rx="1.5" class="l-3" fill="#e10600"/>
-      <rect x="152" y="0" width="13" height="7" rx="1.5" class="l-3" fill="#e10600"/>
-      <rect x="168" y="0" width="13" height="7" rx="1.5" class="l-3" fill="#e10600"/>
-      <rect x="184" y="0" width="13" height="7" rx="1.5" class="l-3" fill="#e10600"/>
-      <!-- Blue Shift LEDs (4) -->
-      <rect x="204" y="0" width="13" height="7" rx="1.5" class="l-4" fill="#38bdf8"/>
-      <rect x="220" y="0" width="13" height="7" rx="1.5" class="l-4" fill="#38bdf8"/>
-      <rect x="236" y="0" width="13" height="7" rx="1.5" class="l-4" fill="#38bdf8"/>
-      <rect x="252" y="0" width="13" height="7" rx="1.5" class="l-4" fill="#38bdf8"/>
+    <!-- F1 Shift Lights (Centered, Crisp) -->
+    <g transform="translate(420, 24)">
+      <!-- Green (3) -->
+      <rect x="0"  y="0" width="10" height="10" rx="2" class="led-1" fill="#10b981"/>
+      <rect x="14" y="0" width="10" height="10" rx="2" class="led-1" fill="#10b981"/>
+      <rect x="28" y="0" width="10" height="10" rx="2" class="led-1" fill="#10b981"/>
+      <!-- Amber (3) -->
+      <rect x="44" y="0" width="10" height="10" rx="2" class="led-2" fill="#f59e0b"/>
+      <rect x="58" y="0" width="10" height="10" rx="2" class="led-2" fill="#f59e0b"/>
+      <rect x="72" y="0" width="10" height="10" rx="2" class="led-2" fill="#f59e0b"/>
+      <!-- Red (3) -->
+      <rect x="88"  y="0" width="10" height="10" rx="2" class="led-3" fill="#ef4444"/>
+      <rect x="102" y="0" width="10" height="10" rx="2" class="led-3" fill="#ef4444"/>
+      <rect x="116" y="0" width="10" height="10" rx="2" class="led-3" fill="#ef4444"/>
+      <!-- Blue (3) -->
+      <rect x="132" y="0" width="10" height="10" rx="2" class="led-4" fill="#38bdf8"/>
+      <rect x="146" y="0" width="10" height="10" rx="2" class="led-4" fill="#38bdf8"/>
+      <rect x="160" y="0" width="10" height="10" rx="2" class="led-4" fill="#38bdf8"/>
     </g>
 
-    <!-- Right Live Status Pill -->
-    <g transform="translate(680, -2)">
-      <rect x="0" y="0" width="158" height="18" rx="3" fill="#13090b" stroke="#7f1d1d" stroke-width="0.8"/>
-      <circle cx="10" cy="9" r="3" fill="#e10600"/>
-      <text x="20" y="12" font-size="8.5" font-weight="700" fill="#f87171" letter-spacing="1">LIVE TELEMETRY FEED</text>
+    <!-- Location & Status Badge -->
+    <g transform="translate(680, 20)">
+      <rect x="0" y="0" width="180" height="22" rx="4" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <circle cx="12" cy="11" r="3" fill="#10b981"/>
+      <text x="22" y="15" font-size="10" font-weight="600" fill="#f0f6fc">HYDERABAD, IN · 2026</text>
     </g>
   </g>
 
-  <!-- Divider Line Below Shift Lights -->
-  <line x1="30" y1="42" x2="870" y2="42" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 4"/>
+  <!-- Divider -->
+  <line x1="36" y1="52" x2="864" y2="52" stroke="#21262d" stroke-width="1"/>
 
-  <!-- ================= MAIN CENTER READOUT ================= -->
-  <!-- Target Tag (F1 Red / Racing Accent) -->
-  <text x="32" y="68" class="mono" font-size="11.5" font-weight="700" fill="#e10600" letter-spacing="2">
-    &gt; MOTORSPORT &amp; TELEMETRY SOFTWARE ENGINEER
+  <!-- Main Hero Content -->
+  <!-- Name (Large, Ultra-Readable) -->
+  <text x="38" y="98" class="font-sans" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.5">
+    Sathwik Elaprolu
   </text>
 
-  <!-- Big Name Readout -->
-  <g class="mono">
-    <text x="30" y="116" font-size="44" font-weight="900" fill="#f8fafc" letter-spacing="0.5">
-      SATHWIK ELAPROLU
-    </text>
-    <!-- Right Badge Accent -->
-    <g transform="translate(695, 84)">
-      <rect x="0" y="0" width="145" height="34" rx="4" fill="#140a0b" stroke="#991b1b" stroke-width="1"/>
-      <text x="12" y="16" font-size="9" font-weight="700" fill="#f87171" letter-spacing="1">PITWALL TELEMETRY</text>
-      <text x="12" y="27" font-size="8" fill="#cbd5e1" letter-spacing="0.5">FORZA · F1 · ML ENGINES</text>
-    </g>
-  </g>
-
-  <!-- Subtitle Line -->
-  <text x="32" y="138" class="mono" font-size="12" fill="#94a3b8" letter-spacing="0.8">
-    Building low-latency telemetry pipelines, 60Hz UDP parsers, and machine learning models for vehicle dynamics.
+  <!-- Engineering Tagline (High Contrast, Clear) -->
+  <text x="40" y="124" class="font-mono" font-size="13" font-weight="500" fill="#52e3a1" letter-spacing="0.5">
+    Motorsport Telemetry · Low-Latency UDP Sockets · Vehicle Dynamics ML
   </text>
 
-  <!-- ================= BOTTOM 3 MFD GAUGES ================= -->
-  <g class="mono" transform="translate(30, 156)">
-    <!-- Container -->
-    <rect x="0" y="0" width="840" height="66" rx="6" fill="#0b0e14" stroke="#1e293b" stroke-width="1"/>
+  <text x="40" y="145" class="font-sans" font-size="13" fill="#8b949e">
+    Engineering low-latency telemetry pipelines, 60Hz raw binary packet parsers, and machine learning models for racing simulation.
+  </text>
 
-    <!-- Pod 1: Ingest Speed (F1 Red) -->
-    <g transform="translate(24, 8)">
-      <text x="0" y="28" font-size="28" font-weight="900" fill="#e10600" filter="url(#mfd-glow)">60Hz</text>
-      <text x="82" y="20" font-size="10" font-weight="800" fill="#f8fafc" letter-spacing="1">RAW UDP INGEST</text>
-      <text x="82" y="32" font-size="8.5" fill="#64748b">16.6ms HARD REAL-TIME WINDOW</text>
-      <text x="82" y="44" font-size="8" fill="#f87171">&gt; ZERO-COPY BINARY STRUCT UNPACK</text>
+  <!-- 3 Performance Pillars (Clean, Spaced, High-Legibility) -->
+  <g class="font-mono" transform="translate(36, 168)">
+    <!-- Pod 1 -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="260" height="52" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <text x="16" y="24" font-size="16" font-weight="800" fill="#10b981">60Hz UDP</text>
+      <text x="16" y="41" font-size="11" fill="#8b949e">Raw Ingest · Zero-Copy Unpack</text>
     </g>
 
-    <!-- Divider 1 -->
-    <line x1="305" y1="10" x2="305" y2="56" stroke="#1e293b" stroke-width="1"/>
-
-    <!-- Pod 2: Voice Loop Latency (Electric Cyan) -->
-    <g transform="translate(325, 8)">
-      <text x="0" y="28" font-size="28" font-weight="900" fill="#38bdf8">&lt;150ms</text>
-      <text x="110" y="20" font-size="10" font-weight="800" fill="#f8fafc" letter-spacing="1">AI PIT CREW DISPATCH</text>
-      <text x="110" y="32" font-size="8.5" fill="#64748b">GROQ LLM + STREAMING AUDIO</text>
-      <text x="110" y="44" font-size="8" fill="#38bdf8">&gt; CONVERSATIONAL TACTICAL CALLOUTS</text>
+    <!-- Pod 2 -->
+    <g transform="translate(285, 0)">
+      <rect x="0" y="0" width="260" height="52" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <text x="16" y="24" font-size="16" font-weight="800" fill="#38bdf8">&lt;150ms</text>
+      <text x="16" y="41" font-size="11" fill="#8b949e">Groq AI Pit Crew Radio Dispatch</text>
     </g>
 
-    <!-- Divider 2 -->
-    <line x1="605" y1="10" x2="605" y2="56" stroke="#1e293b" stroke-width="1"/>
-
-    <!-- Pod 3: ML Degradation (Fastest Sector Purple) -->
-    <g transform="translate(625, 8)">
-      <text x="0" y="28" font-size="28" font-weight="900" fill="#c084fc">APEX</text>
-      <text x="85" y="20" font-size="10" font-weight="800" fill="#f8fafc" letter-spacing="1">F1 TIRE ML REGRESSOR</text>
-      <text x="85" y="32" font-size="8.5" fill="#64748b">FASTF1 API + RANDOM FOREST</text>
-      <text x="85" y="44" font-size="7.5" fill="#c084fc">&gt; NON-LINEAR WEAR CLIFF MODEL</text>
+    <!-- Pod 3 -->
+    <g transform="translate(568, 0)">
+      <rect x="0" y="0" width="260" height="52" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <text x="16" y="24" font-size="16" font-weight="800" fill="#f59e0b">FastF1 ML</text>
+      <text x="16" y="41" font-size="11" fill="#8b949e">Pirelli Tire Degradation Cliff</text>
     </g>
   </g>
 </svg>
