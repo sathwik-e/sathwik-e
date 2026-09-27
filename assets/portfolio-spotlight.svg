@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="100%" height="100%">
+  <defs>
+    <!-- Background Technical Grid -->
+    <pattern id="card-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#161b22" stroke-width="0.75"/>
+    </pattern>
+
+    <pattern id="card-grid-white" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ffffff" stroke-width="1"/>
+    </pattern>
+
+    <mask id="card-grid-mask">
+      <rect x="0" y="0" width="900" height="200" fill="url(#card-grid-white)"/>
+    </mask>
+
+    <!-- Animated Wave Across Grid -->
+    <linearGradient id="spotlight-wave" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52e3a1" stop-opacity="0"/>
+      <stop offset="42%" stop-color="#52e3a1" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#52e3a1" stop-opacity="0.55"/>
+      <stop offset="58%" stop-color="#52e3a1" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#52e3a1" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="portal-glow" cx="80%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#52e3a1" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0a0b0c" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Border Stroke -->
+    <linearGradient id="portal-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52e3a1" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#21262d"/>
+      <stop offset="100%" stop-color="#52e3a1" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    <![CDATA[
+    .font-sans {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .font-mono {
+      font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    }
+
+    @keyframes sweep {
+      0% { transform: translate(-900px, -200px); }
+      100% { transform: translate(900px, 200px); }
+    }
+    .wave-anim {
+      animation: sweep 7s infinite linear;
+    }
+
+    @keyframes pulse-signal {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.9); }
+    }
+    .signal-pulse {
+      animation: pulse-signal 2s infinite ease-in-out;
+      transform-origin: 32px 30px;
+    }
+    ]]>
+  </style>
+
+  <!-- Container Base -->
+  <rect x="2" y="2" width="896" height="196" rx="8" fill="#0a0b0c" stroke="url(#portal-border)" stroke-width="1.5"/>
+
+  <!-- Straight Technical Grid -->
+  <rect x="2" y="2" width="896" height="196" rx="8" fill="url(#card-grid)"/>
+
+  <!-- Wave Animation Across Grid -->
+  <g mask="url(#card-grid-mask)">
+    <g class="wave-anim">
+      <rect x="-450" y="-100" width="1800" height="400" fill="url(#spotlight-wave)"/>
+    </g>
+  </g>
+
+  <!-- Glow Background -->
+  <rect x="2" y="2" width="896" height="196" rx="8" fill="url(#portal-glow)"/>
+
+  <!-- Window Header / Browser Chrome -->
+  <g class="font-mono">
+    <!-- Window Dots -->
+    <circle cx="28" cy="25" r="4" fill="#ef4444" opacity="0.8"/>
+    <circle cx="42" cy="25" r="4" fill="#f59e0b" opacity="0.8"/>
+    <circle cx="56" cy="25" r="4" fill="#52e3a1" opacity="0.8"/>
+
+    <!-- URL Pill -->
+    <rect x="80" y="14" width="340" height="22" rx="4" fill="#12151c" stroke="#21262d" stroke-width="1"/>
+    <circle cx="94" cy="25" r="3" fill="#52e3a1" class="signal-pulse"/>
+    <text x="106" y="29" font-size="11" fill="#52e3a1" font-weight="600">https://sathwik-e-portfolio.vercel.app</text>
+
+    <!-- Status Badge -->
+    <g transform="translate(680, 14)">
+      <rect x="0" y="0" width="190" height="22" rx="4" fill="#0d1b14" stroke="#52e3a1" stroke-opacity="0.4" stroke-width="1"/>
+      <circle cx="12" cy="11" r="3" fill="#52e3a1"/>
+      <text x="22" y="15" font-size="10" font-weight="700" fill="#52e3a1">PRODUCTION LIVE · 2026</text>
+    </g>
+  </g>
+
+  <line x1="16" y1="46" x2="884" y2="46" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Main Showcase Content -->
+  <g transform="translate(28, 70)">
+    <text x="0" y="18" class="font-mono" font-size="11" font-weight="700" fill="#52e3a1" letter-spacing="1.5">
+      // PRIMARY PRODUCTION PORTFOLIO &amp; HUD
+    </text>
+
+    <text x="0" y="48" class="font-sans" font-size="24" font-weight="800" fill="#ffffff">
+      Explore Systems Blueprint &amp; Interactive Telemetry
+    </text>
+
+    <text x="0" y="72" class="font-sans" font-size="13" fill="#8b949e">
+      Featuring live 60Hz UDP data pipelines, real-time voice AI radio callouts, F1 degradation ML regressor, and local-first architecture.
+    </text>
+
+    <!-- Tag Pills -->
+    <g transform="translate(0, 90)" class="font-mono">
+      <rect x="0" y="0" width="92" height="22" rx="4" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+      <text x="8" y="15" font-size="10" fill="#f0f6fc">🏎️ Pitwall UDP</text>
+
+      <rect x="102" y="0" width="98" height="22" rx="4" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+      <text x="110" y="15" font-size="10" fill="#f0f6fc">📈 Apex AI ML</text>
+
+      <rect x="210" y="0" width="112" height="22" rx="4" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+      <text x="218" y="15" font-size="10" fill="#f0f6fc">🩺 MedAssist OCR</text>
+
+      <rect x="332" y="0" width="128" height="22" rx="4" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+      <text x="340" y="15" font-size="10" fill="#f0f6fc">🛡️ Watchdog VLM</text>
+    </g>
+  </g>
+
+  <!-- Big Action Button (Right Side) -->
+  <g transform="translate(680, 85)" class="font-mono">
+    <rect x="0" y="0" width="190" height="48" rx="6" fill="#52e3a1"/>
+    <text x="95" y="29" font-size="13" font-weight="800" fill="#0a0b0c" text-anchor="middle">
+      LAUNCH HUD ↗
+    </text>
+  </g>
+</svg>

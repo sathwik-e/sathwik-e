@@ -1,14 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="100%" height="100%">
   <defs>
-    <!-- Background Technical Grid -->
+    <!-- Background Technical Grid (Straight Cartesian Orthogonal Lines) -->
     <pattern id="clean-grid" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#161b22" stroke-width="0.75"/>
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#161b22" stroke-width="0.8"/>
     </pattern>
 
-    <!-- Subtle Premium Glow -->
-    <radialGradient id="subtle-glow" cx="50%" cy="0%" r="60%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.08"/>
-      <stop offset="60%" stop-color="#0ea5e9" stop-opacity="0.03"/>
+    <!-- White Grid Pattern for Wave Masking -->
+    <pattern id="clean-grid-mask" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ffffff" stroke-width="1.2"/>
+    </pattern>
+
+    <mask id="grid-line-mask">
+      <rect x="0" y="0" width="900" height="240" fill="url(#clean-grid-mask)"/>
+    </mask>
+
+    <!-- Wave 1: Rolling Diagonal Emerald Wave Gradient -->
+    <linearGradient id="wave-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52e3a1" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#52e3a1" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#52e3a1" stop-opacity="0.65"/>
+      <stop offset="54%" stop-color="#38bdf8" stop-opacity="0.45"/>
+      <stop offset="65%" stop-color="#52e3a1" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#52e3a1" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Wave 2: Harmonic Secondary Wave Gradient -->
+    <linearGradient id="wave-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0"/>
+      <stop offset="38%" stop-color="#10b981" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#10b981" stop-opacity="0.5"/>
+      <stop offset="62%" stop-color="#10b981" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Subtle Ambient Glow -->
+    <radialGradient id="subtle-glow" cx="50%" cy="0%" r="65%">
+      <stop offset="0%" stop-color="#52e3a1" stop-opacity="0.09"/>
+      <stop offset="50%" stop-color="#0ea5e9" stop-opacity="0.03"/>
       <stop offset="100%" stop-color="#0a0b0e" stop-opacity="0"/>
     </radialGradient>
 
@@ -40,6 +68,23 @@
     .led-3 { animation: led-seq-3 2.2s infinite ease-in-out; }
     .led-4 { animation: led-seq-4 2.2s infinite ease-in-out; }
 
+    /* Wave Animation across Straight Grid */
+    @keyframes wave-travel-1 {
+      0% { transform: translate(-900px, -240px); }
+      100% { transform: translate(900px, 240px); }
+    }
+    @keyframes wave-travel-2 {
+      0% { transform: translate(900px, -240px); }
+      100% { transform: translate(-900px, 240px); }
+    }
+
+    .wave-sweep-1 {
+      animation: wave-travel-1 6s infinite linear;
+    }
+    .wave-sweep-2 {
+      animation: wave-travel-2 8.5s infinite linear;
+    }
+
     @keyframes live-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.4; transform: scale(0.95); }
@@ -50,21 +95,35 @@
 
   <!-- Card Shell -->
   <rect x="2" y="2" width="896" height="236" rx="10" fill="#0a0b0e" stroke="url(#border-stroke)" stroke-width="1.5"/>
+
+  <!-- Straight Background Grid (Fixed Cartesian geometry) -->
   <rect x="2" y="2" width="896" height="236" rx="10" fill="url(#clean-grid)"/>
+
+  <!-- Wave Animation Across the Straight Grid (Masked to straight lines) -->
+  <g mask="url(#grid-line-mask)">
+    <g class="wave-sweep-1">
+      <rect x="-450" y="-120" width="1800" height="480" fill="url(#wave-grad-1)"/>
+    </g>
+    <g class="wave-sweep-2">
+      <rect x="-450" y="-120" width="1800" height="480" fill="url(#wave-grad-2)"/>
+    </g>
+  </g>
+
+  <!-- Subtle Ambient Glow -->
   <rect x="2" y="2" width="896" height="236" rx="10" fill="url(#subtle-glow)"/>
 
   <!-- Top Metadata Bar -->
   <g class="font-mono">
-    <!-- Live Beacon -->
-    <circle cx="40" cy="30" r="4" fill="#10b981" class="pulse"/>
-    <text x="52" y="34" font-size="11" font-weight="600" fill="#8b949e" letter-spacing="1">S. ELAPROLU // SYSTEMS &amp; MOTORSPORT SOFTWARE</text>
+    <!-- Live Green Signal Beacon -->
+    <circle cx="40" cy="30" r="4" fill="#52e3a1" class="pulse"/>
+    <text x="52" y="34" font-size="11" font-weight="600" fill="#8b949e" letter-spacing="1">S. ELAPROLU // SYSTEMS &amp; AI ENGINEER</text>
 
-    <!-- F1 Shift Lights (Centered, Crisp) -->
+    <!-- F1 Shift Lights (Centered) -->
     <g transform="translate(420, 24)">
       <!-- Green (3) -->
-      <rect x="0"  y="0" width="10" height="10" rx="2" class="led-1" fill="#10b981"/>
-      <rect x="14" y="0" width="10" height="10" rx="2" class="led-1" fill="#10b981"/>
-      <rect x="28" y="0" width="10" height="10" rx="2" class="led-1" fill="#10b981"/>
+      <rect x="0"  y="0" width="10" height="10" rx="2" class="led-1" fill="#52e3a1"/>
+      <rect x="14" y="0" width="10" height="10" rx="2" class="led-1" fill="#52e3a1"/>
+      <rect x="28" y="0" width="10" height="10" rx="2" class="led-1" fill="#52e3a1"/>
       <!-- Amber (3) -->
       <rect x="44" y="0" width="10" height="10" rx="2" class="led-2" fill="#f59e0b"/>
       <rect x="58" y="0" width="10" height="10" rx="2" class="led-2" fill="#f59e0b"/>
@@ -82,7 +141,7 @@
     <!-- Location & Status Badge -->
     <g transform="translate(680, 20)">
       <rect x="0" y="0" width="180" height="22" rx="4" fill="#11141b" stroke="#21262d" stroke-width="1"/>
-      <circle cx="12" cy="11" r="3" fill="#10b981"/>
+      <circle cx="12" cy="11" r="3" fill="#52e3a1"/>
       <text x="22" y="15" font-size="10" font-weight="600" fill="#f0f6fc">HYDERABAD, IN · 2026</text>
     </g>
   </g>
@@ -96,36 +155,43 @@
     Sathwik Elaprolu
   </text>
 
-  <!-- Engineering Tagline (High Contrast, Clear) -->
+  <!-- Engineering Tagline (Matching Portfolio Signal Green) -->
   <text x="40" y="124" class="font-mono" font-size="13" font-weight="500" fill="#52e3a1" letter-spacing="0.5">
-    Motorsport Telemetry · Low-Latency UDP Sockets · Vehicle Dynamics ML
+    GenAI Applications · Motorsport Telemetry · Self-Healing Data Pipelines
   </text>
 
   <text x="40" y="145" class="font-sans" font-size="13" fill="#8b949e">
-    Engineering low-latency telemetry pipelines, 60Hz raw binary packet parsers, and machine learning models for racing simulation.
+    Engineering low-latency telemetry pipelines, 60Hz raw binary packet parsers, and machine learning models end to end.
   </text>
 
-  <!-- 3 Performance Pillars (Clean, Spaced, High-Legibility) -->
+  <!-- 4 Performance Pillars directly from Portfolio -->
   <g class="font-mono" transform="translate(36, 168)">
     <!-- Pod 1 -->
     <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="260" height="52" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
-      <text x="16" y="24" font-size="16" font-weight="800" fill="#10b981">60Hz UDP</text>
-      <text x="16" y="41" font-size="11" fill="#8b949e">Raw Ingest · Zero-Copy Unpack</text>
+      <rect x="0" y="0" width="195" height="52" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <text x="14" y="24" font-size="15" font-weight="800" fill="#52e3a1">05 BUILT</text>
+      <text x="14" y="41" font-size="10" fill="#8b949e">Production Systems</text>
     </g>
 
     <!-- Pod 2 -->
-    <g transform="translate(285, 0)">
-      <rect x="0" y="0" width="260" height="52" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
-      <text x="16" y="24" font-size="16" font-weight="800" fill="#38bdf8">&lt;150ms</text>
-      <text x="16" y="41" font-size="11" fill="#8b949e">Groq AI Pit Crew Radio Dispatch</text>
+    <g transform="translate(210, 0)">
+      <rect x="0" y="0" width="195" height="52" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <text x="14" y="24" font-size="15" font-weight="800" fill="#52e3a1">60Hz UDP</text>
+      <text x="14" y="41" font-size="10" fill="#8b949e">Raw Ingest Rate</text>
     </g>
 
     <!-- Pod 3 -->
-    <g transform="translate(568, 0)">
-      <rect x="0" y="0" width="260" height="52" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
-      <text x="16" y="24" font-size="16" font-weight="800" fill="#f59e0b">FastF1 ML</text>
-      <text x="16" y="41" font-size="11" fill="#8b949e">Pirelli Tire Degradation Cliff</text>
+    <g transform="translate(420, 0)">
+      <rect x="0" y="0" width="195" height="52" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <text x="14" y="24" font-size="15" font-weight="800" fill="#38bdf8">&lt;150ms</text>
+      <text x="14" y="41" font-size="10" fill="#8b949e">Voice AI Crew Chief Loop</text>
+    </g>
+
+    <!-- Pod 4 -->
+    <g transform="translate(630, 0)">
+      <rect x="0" y="0" width="198" height="52" rx="6" fill="#11141b" stroke="#21262d" stroke-width="1"/>
+      <text x="14" y="24" font-size="15" font-weight="800" fill="#f59e0b">100%</text>
+      <text x="14" y="41" font-size="10" fill="#8b949e">Local-First SQLite &amp; Zero Leak</text>
     </g>
   </g>
 </svg>
