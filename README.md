@@ -19,6 +19,11 @@
     <img src="https://img.shields.io/badge/STATUS-AVAILABLE_FOR_ROLES-22c55e?style=for-the-badge&logo=statuspal&logoColor=white&labelColor=08090d" alt="Status: Open for Roles"/>
   </p>
 
+  <!-- LIVE MOTORSPORT TELEMETRY STREAM TYPING ANIMATION -->
+  <p align="center">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=15&duration=2600&pause=1200&color=4ADE80&background=07090E00&center=true&vCenter=true&width=780&height=34&lines=%3E+Specialized+in+Motorsport+Telemetry+%26+Simulation+Engineering;%3E+Ingesting+60Hz+Forza+Motorsport+raw+UDP+telemetry+streams...;%3E+Apex+AI%3A+Predicting+non-linear+Pirelli+F1+tire+degradation+curves...;%3E+Pitwall%3A+Sub-150ms+Groq+voice+AI+crew+chief+radio+dispatch...;%3E+Analyzing+live+lap+deltas%2C+apex+speeds+%26+braking+friction+circles...;%3E+Eliminating+synthetic+latency+across+low-level+sockets..." alt="Live Motorsport Telemetry Stream"/>
+  </p>
+
   <img src="assets/divider.svg" alt="Separator" width="100%"/>
 
 </div>
@@ -27,18 +32,59 @@
 ┌── HOST SYSTEM SPECS ────────────────────────────────────────────────────────────────────────┐
 │  USER: sathwik-e             LOCATION: Hyderabad, IN [17.3850° N, 78.4867° E]               │
 │  AFFILIATION: St Mary's EC   DEGREE: B.Tech Computer Science & Engineering (Class of 2028)  │
-│  CORE ARCHITECTURE:          Low-Latency Systems · Network Protocols · Local-First AI       │
-│  ACTIVE RUNTIME:             60Hz UDP Parsing · Sub-150ms Voice Loops · Zero-Cloud SQLite   │
+│  SPECIALIZATION:             Motorsport Telemetry · Sim Racing Engines · Low-Latency UDP    │
+│  ACTIVE RUNTIME:             60Hz Binary Sockets · F1 Wear Modeling · Sub-150ms Voice Loops │
 └─────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-> **Systems & Software Engineer** focused on low-latency data streams, local-first intelligence, and self-healing automation. I prefer working close to sockets, protocols, and raw data buffers rather than generic CRUD layers—building software designed to stay fast, private, and resilient under real-world data drift.
+> **Systems & Motorsport Software Engineer** specialized in high-frequency racing telemetry, simulation physics streams, and machine learning models for motorsport strategy. I build close to sockets, protocols, and raw data buffers—handling live mechanical and network stress from parsing raw 60Hz UDP vehicle dynamics in racing simulators to predicting non-linear tire thermal degradation on Formula 1 circuits.
 
 <br/>
 
 ---
 
-## ■ 00 // SYSTEM BLUEPRINT & CODE ARCHITECTURE
+## 🏎️ 00 // LIVE MOTORSPORT TELEMETRY & SIMULATION HUD
+
+> Real-time sim racing telemetry engine, 60Hz UDP packet parsing, live tire degradation thermals, and conversational voice AI crew chief dispatch.
+
+<div align="center">
+  <img src="assets/motorsport-telemetry-hud.svg" alt="MoTeC / Pitwall Simulation Telemetry HUD" width="100%"/>
+</div>
+
+<details>
+<summary><b>[VIEW MOTORSPORT DATA PIPELINE &amp; TELEMETRY DICTIONARY]</b></summary>
+
+<br/>
+
+```
+┌── PACKET INGEST SPECIFICATION // FORZA MOTORSPORT & F1 TELEMETRY ────────────────────────────┐
+│                                                                                              │
+│  INGESTION PROTOCOL:      Raw UDP Datagram (Zero Handshake Overhead)                         │
+│  PAYLOAD ARCHITECTURE:    324-Byte Binary C-Struct Unpack (struct.unpack)                    │
+│  SAMPLING FREQUENCY:      60.0 Hz (16.66ms hard real-time packet deadline)                   │
+│                                                                                              │
+│  TRACKED CHANNELS:                                                                           │
+│  ▸ KINEMATICS:   Wheel Slip Ratio (FL, FR, RL, RR) · Suspension Travel · Angular Pitch/Roll  │
+│  ▸ POWERTRAIN:   Engine RPM · Gearbox State · Throttle/Brake Pedal Trace · Turbo Boost       │
+│  ▸ DYNAMICS:     Friction Circle (Lateral/Longitudinal G) · Slip Angles · Yaw Velocity       │
+│  ▸ THERMALS:     Tire Core & Surface Temperatures (°C) · Dynamic Compound Wear Index         │
+│  ▸ DISPATCH:     Bidirectional Groq LLM + Edge-TTS AI Crew Chief Audio Loop (<150ms)        │
+└──────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+</details>
+
+<br/>
+
+<div align="center">
+  <img src="assets/telemetry-bar.svg" alt="Real-Time Telemetry Feed" width="100%"/>
+</div>
+
+<br/>
+
+---
+
+## ■ 01 // SYSTEM BLUEPRINT & CODE ARCHITECTURE
 
 > High-frequency telemetry ingestion, zero-copy packet deserialization, and real-time audio dispatch.
 
@@ -67,15 +113,9 @@
 
 <br/>
 
-<div align="center">
-  <img src="assets/telemetry-bar.svg" alt="Real-Time Telemetry Feed" width="100%"/>
-</div>
-
-<br/>
-
 ---
 
-## ■ 01 // PRODUCTION SYSTEMS & WORK
+## ■ 02 // MOTORSPORT & PRODUCTION SYSTEMS WORK
 
 <table>
   <thead>
@@ -94,11 +134,11 @@
         <sub>2026 // Production</sub>
       </td>
       <td>
-        <code>SYSTEMS</code><br/>
+        <code>MOTORSPORT</code><br/>
         <img src="https://img.shields.io/badge/60Hz-UDP-22c55e?style=flat-square&labelColor=08090d" alt="60Hz UDP"/>
       </td>
       <td>
-        Live telemetry dashboard for sim racing. Reads raw UDP telemetry from Forza at 60Hz, executes zero-copy unpacking, and narrates live race telemetry through a conversational voice AI crew chief mid-race.
+        Live telemetry dashboard for sim racing. Reads raw UDP telemetry from Forza at 60Hz, executes zero-copy binary unpacking, and narrates live race telemetry back through a conversational voice AI pit crew chief mid-race (<150ms loop).
         <br/><br/>
         <sub><b>Stack:</b> Python, Flask, WebSockets, Groq API, Edge-TTS</sub>
       </td>
@@ -118,11 +158,11 @@
         <sub>2026 // Research</sub>
       </td>
       <td>
-        <code>ACADEMIC ML</code><br/>
+        <code>MOTORSPORT ML</code><br/>
         <img src="https://img.shields.io/badge/ML-REGRESSOR-38bdf8?style=flat-square&labelColor=08090d" alt="ML Regressor"/>
       </td>
       <td>
-        Motorsport analytics engine utilizing FastF1 telemetry streams. Predicts non-linear tire compound degradation curves using an ensemble Random Forest Regressor trained on lap deltas, compound age, sector speeds, and dynamic track temperatures.
+        Formula 1 motorsport analytics engine utilizing FastF1 telemetry streams. Predicts non-linear Pirelli tire compound degradation curves using an ensemble Random Forest Regressor trained on lap deltas, compound age, sector speeds, and dynamic track temperatures.
         <br/><br/>
         <sub><b>Stack:</b> Python, FastF1 API, Scikit-Learn, Random Forest, Flask</sub>
       </td>
@@ -206,12 +246,12 @@
 
 ---
 
-## ■ 02 // ENGINEERING DECISION LOG
+## ■ 03 // ENGINEERING DECISION LOG
 
 > *"Every system has a trade-off — the log shows how I decide."*
 
 <details>
-<summary><b>#001 // Why UDP over TCP for Pitwall?</b> <code>[NETWORKING]</code> <code>Pitwall</code></summary>
+<summary><b>#001 // Why UDP over TCP for Pitwall?</b> <code>[MOTORSPORT NETWORKING]</code> <code>Pitwall</code></summary>
 
 <br/>
 
@@ -225,7 +265,21 @@
 </details>
 
 <details>
-<summary><b>#002 // Why local-first storage for MedAssist?</b> <code>[STORAGE &amp; PRIVACY]</code> <code>MedAssist AI</code></summary>
+<summary><b>#002 // Random Forest over Deep Neural Nets for tire degradation?</b> <code>[MOTORSPORT ML]</code> <code>Apex AI</code></summary>
+
+<br/>
+
+```ini
+[CONTEXT]   F1 Pirelli tire wear accelerates non-linearly due to thermal degradation and dirty air vortex shedding.
+[TRADEOFF]  Linear regression underfits the thermal drop-off cliff; deep neural networks overfit on sparse stint telemetry.
+[DECISION]  Ensemble Random Forest Regressor trained on lap deltas, compound age, sector speeds, and surface temperatures.
+[RESULT]    Robust R² prediction on pit-stop windows with zero GPU requirement for real-time race simulations.
+```
+
+</details>
+
+<details>
+<summary><b>#003 // Why local-first storage for MedAssist?</b> <code>[STORAGE &amp; PRIVACY]</code> <code>MedAssist AI</code></summary>
 
 <br/>
 
@@ -239,7 +293,7 @@
 </details>
 
 <details>
-<summary><b>#003 // Local VLM fallback for broken DOM selectors?</b> <code>[AUTOMATION]</code> <code>Blindfold</code></summary>
+<summary><b>#004 // Local VLM fallback for broken DOM selectors?</b> <code>[AUTOMATION]</code> <code>Blindfold</code></summary>
 
 <br/>
 
@@ -248,20 +302,6 @@
 [TRADEOFF]  Heuristic fuzzy text-matching fails when UI layout labels change; cloud vision APIs are cost-prohibitive at scale.
 [DECISION]  Viewport screenshot capture dispatched to an optimized local Vision-Language Model (VLM) for bounding box re-anchoring.
 [RESULT]    94%+ self-healing recovery rate on broken DOM nodes without stopping production crawler runs.
-```
-
-</details>
-
-<details>
-<summary><b>#004 // Random Forest over Deep Neural Nets for tire degradation?</b> <code>[ML &amp; TELEMETRY]</code> <code>Apex AI</code></summary>
-
-<br/>
-
-```ini
-[CONTEXT]   F1 Pirelli tire wear accelerates non-linearly due to thermal degradation and dirty air vortex shedding.
-[TRADEOFF]  Linear regression underfits the thermal drop-off cliff; deep neural networks overfit on sparse stint telemetry.
-[DECISION]  Ensemble Random Forest Regressor trained on lap deltas, compound age, sector speeds, and surface temperatures.
-[RESULT]    Robust R² prediction on pit-stop windows with zero GPU requirement for real-time race simulations.
 ```
 
 </details>
@@ -276,20 +316,21 @@
 
 ---
 
-## ■ 03 // TECHNICAL STACK MATRIX
+## ■ 04 // TECHNICAL STACK MATRIX
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h4>⚡ SYSTEMS &amp; LOW-LATENCY</h4>
+      <h4>🏎️ MOTORSPORT &amp; LOW-LATENCY</h4>
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
       <img src="https://img.shields.io/badge/FastF1_API-E10600?style=flat-square&logo=formula1&logoColor=white"/>
       <img src="https://img.shields.io/badge/UDP_Sockets-22C55E?style=flat-square&logo=gnubash&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Forza_Telemetry-E10600?style=flat-square&logo=xbox&logoColor=white"/>
       <img src="https://img.shields.io/badge/WebSockets-010101?style=flat-square&logo=socketdotio&logoColor=white"/>
       <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
       <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white"/>
       <br/><br/>
-      <sub>Zero-copy binary unpacking, ring buffers, asynchronous event loops, and telemetry pipelines.</sub>
+      <sub>Binary struct unpacking, ring buffers, vehicle kinematics, friction circles, and live telemetry feeds.</sub>
     </td>
     <td width="50%" valign="top">
       <h4>🌐 WEB &amp; FRONTEND</h4>
@@ -299,19 +340,20 @@
       <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white"/>
       <img src="https://img.shields.io/badge/HTML5_Canvas-E34F26?style=flat-square&logo=html5&logoColor=white"/>
       <br/><br/>
-      <sub>High-density HUD dashboards, terminal-inspired design systems, and responsive SVG telemetry.</sub>
+      <sub>High-density racing HUD dashboards, terminal-inspired design systems, and responsive SVG telemetry.</sub>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h4>🧠 MACHINE LEARNING &amp; AI</h4>
+      <h4>🧠 MACHINE LEARNING &amp; MOTORSPORT AI</h4>
       <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Random_Forest-22C55E?style=flat-square&logo=databricks&logoColor=white"/>
       <img src="https://img.shields.io/badge/Local_VLM-8B5CF6?style=flat-square&logo=huggingface&logoColor=white"/>
       <img src="https://img.shields.io/badge/Tesseract_OCR-5C6BC0?style=flat-square&logo=google&logoColor=white"/>
       <img src="https://img.shields.io/badge/Groq_API_(<150ms)-F05032?style=flat-square&logo=speedtest&logoColor=white"/>
       <img src="https://img.shields.io/badge/Gemini_API-4285F4?style=flat-square&logo=google&logoColor=white"/>
       <br/><br/>
-      <sub>Random Forest regressors, visual grounding models, streaming inference loops, and client OCR.</sub>
+      <sub>Tire wear regressors, delta sector modeling, streaming voice inference loops, and on-device vision.</sub>
     </td>
     <td width="50%" valign="top">
       <h4>💾 DATABASES &amp; AUTOMATION</h4>
@@ -330,7 +372,7 @@
 
 ---
 
-## ■ 04 // ENGINEERING MILESTONES & HISTORY
+## ■ 05 // MOTORSPORT & ENGINEERING MILESTONES
 
 ```
 2024 ───────► [ENROLLMENT] B.Tech in Computer Science & Engineering
@@ -359,9 +401,18 @@
 
 ---
 
-## ■ 05 // TELEMETRY & GITHUB ACTIVITY
+## ■ 06 // TELEMETRY & GITHUB ACTIVITY
 
 <div align="center">
+
+  <!-- DYNAMIC CONTRIBUTION GRAPH SNAKE (AUTOMATED VIA GITHUB ACTION) -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sathwik-e/sathwik-e/output/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sathwik-e/sathwik-e/output/github-snake.svg">
+    <img alt="GitHub Contribution Grid Snake" src="https://raw.githubusercontent.com/sathwik-e/sathwik-e/output/github-snake-dark.svg" width="100%" />
+  </picture>
+
+  <br/><br/>
 
   <table border="0" cellspacing="0" cellpadding="0">
     <tr align="center">
@@ -392,9 +443,9 @@
 
 ---
 
-## ■ 06 // TRANSMISSION TERMINAL // CONTACT
+## ■ 07 // TRANSMISSION TERMINAL // CONTACT
 
-> Open for systems engineering roles, low-latency infrastructure projects, and real-time AI pipelines. Reach out with technical problems, timelines, or collaboration proposals.
+> Open for motorsport telemetry roles, low-latency simulation infrastructure, and real-time AI pipelines. Reach out with technical problems, timelines, or collaboration proposals.
 
 ```
 ┌── SECURE TRANSMISSION CHANNELS ────────────────────────────────────────────────────────┐
@@ -404,7 +455,7 @@
 │  LINKEDIN:          https://www.linkedin.com/in/sathwik-elaprolu                       │
 │  GITHUB:            https://github.com/sathwik-e                                       │
 │                                                                                        │
-│  STATUS DISPATCH:   [● ONLINE] // OPEN FOR ROLES & COLLABORATIONS                      │
+│  STATUS DISPATCH:   [● ONLINE] // OPEN FOR MOTORSPORT & SYSTEMS ROLES                  │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -423,7 +474,7 @@
   <br/>
 
   <sub>
-    DESIGNED WITH PRECISION // MIRRORING <a href="https://sathwik-e-portfolio.vercel.app">SATHWIK-E-PORTFOLIO.VERCEL.APP</a> // RUNTIME NOMINAL ■
+    DESIGNED WITH PRECISION // MOTORSPORT TELEMETRY &amp; LOW-LATENCY SYSTEMS // RUNTIME NOMINAL ■
   </sub>
 
 </div>
