@@ -105,11 +105,15 @@
     <img alt="GitHub Contribution Grid Snake" src="https://raw.githubusercontent.com/sathwik-e/sathwik-e/output/github-snake-dark.svg" width="100%" />
   </picture>
 
-  <br/><br/>
-
-  <a href="https://github.com/sathwik-e">
-    <img src="https://streak-stats.demolab.com/?user=sathwik-e&theme=dark&background=0a0b0e&ring=10b981&fire=10b981&currStreakLabel=52e3a1&border=21262d&border_radius=6" alt="Sathwik's GitHub Streak" width="440"/>
-  </a>
+  <p align="center">
+    <a href="https://github.com/sathwik-e">
+      <img src="https://streak-stats.demolab.com/?user=sathwik-e&theme=dark&background=0a0b0e&ring=22c55e&fire=22c55e&currStreakLabel=22c55e&currStreakNum=22c55e&sideNums=f0f6fc&sideLabels=8b949e&dates=8b949e&border=21262d&border_radius=6" alt="Sathwik's GitHub Streak" width="420"/>
+    </a>
+    &nbsp;
+    <a href="https://github.com/sathwik-e">
+      <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=sathwik-e&show_icons=true&theme=dark&bg_color=0a0b0e&title_color=22c55e&text_color=8b949e&icon_color=22c55e&border_color=21262d&border_radius=6" alt="Sathwik's GitHub Stats" width="420"/>
+    </a>
+  </p>
 
   <br/><br/>
 
