@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" width="100%" height="100%">
+  <defs>
+    <!-- Background Grid Pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#161e27" stroke-width="0.75" stroke-opacity="0.7"/>
+      <circle cx="30" cy="30" r="0.75" fill="#22c55e" fill-opacity="0.25"/>
+    </pattern>
+
+    <!-- Radial Gradients -->
+    <radialGradient id="glow-grad" cx="80%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#0e1726" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="pulse-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4ade80" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Linear Gradients -->
+    <linearGradient id="card-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#1f2937" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <linearGradient id="metric-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#a7f3d0"/>
+    </linearGradient>
+
+    <!-- Filter for glow -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes pulse {
+      0% { r: 4px; opacity: 1; }
+      50% { r: 7px; opacity: 0.4; }
+      100% { r: 4px; opacity: 1; }
+    }
+    @keyframes scan {
+      0% { transform: translateY(0px); opacity: 0; }
+      50% { opacity: 0.15; }
+      100% { transform: translateY(330px); opacity: 0; }
+    }
+    @keyframes telemetry {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -120; }
+    }
+    .mono {
+      font-family: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
+    }
+    .cursor {
+      animation: blink 1s infinite;
+      fill: #4ade80;
+    }
+    .pulse-dot {
+      animation: pulse 2s infinite ease-in-out;
+    }
+    .stream-line {
+      stroke-dasharray: 6 4;
+      animation: telemetry 6s linear infinite;
+    }
+  </style>
+
+  <!-- Base Panel -->
+  <rect x="2" y="2" width="896" height="326" rx="12" fill="#090b10" stroke="url(#card-border)" stroke-width="1.5"/>
+  <rect x="2" y="2" width="896" height="326" rx="12" fill="url(#grid)"/>
+  <rect x="2" y="2" width="896" height="326" rx="12" fill="url(#glow-grad)"/>
+
+  <!-- Corner Brackets -->
+  <path d="M 16 36 L 16 16 L 36 16" fill="none" stroke="#4ade80" stroke-width="2"/>
+  <path d="M 884 36 L 884 16 L 864 16" fill="none" stroke="#4ade80" stroke-width="2"/>
+  <path d="M 16 294 L 16 314 L 36 314" fill="none" stroke="#4ade80" stroke-width="2"/>
+  <path d="M 884 294 L 884 314 L 864 314" fill="none" stroke="#4ade80" stroke-width="2"/>
+
+  <!-- Top System Header Bar -->
+  <g class="mono">
+    <!-- Green square indicator -->
+    <rect x="36" y="28" width="8" height="8" fill="#22c55e" filter="url(#neon-glow)"/>
+    <text x="52" y="36" font-size="11" font-weight="700" fill="#f3f4f6" letter-spacing="1.5">S. ELAPROLU // SYSTEMS ARCHITECTURE</text>
+    
+    <text x="390" y="36" font-size="10" fill="#64748b" letter-spacing="1">HOST: HYDERABAD, IN [17.3850° N, 78.4867° E]</text>
+
+    <!-- Status pill -->
+    <g transform="translate(680, 21)">
+      <rect x="0" y="0" width="184" height="22" rx="4" fill="#0d1b14" stroke="#1b4d2e" stroke-width="1"/>
+      <circle cx="14" cy="11" r="4" fill="#22c55e" class="pulse-dot"/>
+      <text x="26" y="15" font-size="9.5" font-weight="600" fill="#4ade80" letter-spacing="0.8">AVAILABLE FOR ROLES</text>
+    </g>
+  </g>
+
+  <!-- Subtle Divider Under Header -->
+  <line x1="36" y1="52" x2="864" y2="52" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- Subheading / Classification -->
+  <text x="40" y="85" class="mono" font-size="12" font-weight="600" fill="#4ade80" letter-spacing="2">
+    &gt; SYSTEMS &amp; SOFTWARE ENGINEER // LOW-LATENCY INFRASTRUCTURE
+  </text>
+
+  <!-- Big Name -->
+  <text x="38" y="136" class="mono" font-size="44" font-weight="800" fill="#f8fafc" letter-spacing="-0.5">
+    Sathwik Elaprolu
+  </text>
+
+  <!-- Mini Decorative Badge next to name -->
+  <g transform="translate(540, 106)">
+    <rect x="0" y="0" width="95" height="24" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="10" y="16" class="mono" font-size="10.5" fill="#94a3b8" letter-spacing="1">B.Tech '28</text>
+  </g>
+  <g transform="translate(645, 106)">
+    <rect x="0" y="0" width="105" height="24" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="10" y="16" class="mono" font-size="10.5" fill="#94a3b8" letter-spacing="1">UDP 60Hz</text>
+  </g>
+  <g transform="translate(760, 106)">
+    <rect x="0" y="0" width="100" height="24" rx="4" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+    <text x="10" y="16" class="mono" font-size="10.5" font-weight="700" fill="#6ee7b7" letter-spacing="1">PROD SYS</text>
+  </g>
+
+  <!-- Terminal Command & Bio line -->
+  <g class="mono" transform="translate(40, 168)">
+    <text x="0" y="0" font-size="13.5" fill="#94a3b8">
+      Building software designed to stay <tspan fill="#f1f5f9" font-weight="600">fast, private, and resilient</tspan> under real-world data drift.
+    </text>
+    <text x="0" y="24" font-size="12" fill="#64748b">
+      $ pipeline --ingest=raw_udp --local_llm=&lt;150ms --storage=sqlite_zero_cloud
+    </text>
+    <rect x="585" y="12" width="8" height="14" class="cursor"/>
+  </g>
+
+  <!-- Metrics HUD Bar (Bottom Container) -->
+  <g transform="translate(36, 222)">
+    <!-- Container background -->
+    <rect x="0" y="0" width="828" height="78" rx="8" fill="#0c1017" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Metric 1: Systems Built -->
+    <g transform="translate(24, 0)">
+      <text x="0" y="38" class="mono" font-size="28" font-weight="800" fill="#f8fafc">05</text>
+      <text x="0" y="58" class="mono" font-size="9.5" font-weight="700" fill="#4ade80" letter-spacing="1.5">SYSTEMS BUILT</text>
+      <text x="0" y="68" class="mono" font-size="8" fill="#475569">PRODUCTION READY</text>
+    </g>
+
+    <line x1="205" y1="14" x2="205" y2="64" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Metric 2: UDP Ingest Rate -->
+    <g transform="translate(230, 0)">
+      <text x="0" y="38" class="mono" font-size="28" font-weight="800" fill="#4ade80" filter="url(#neon-glow)">60Hz</text>
+      <text x="0" y="58" class="mono" font-size="9.5" font-weight="700" fill="#94a3b8" letter-spacing="1.5">UDP INGEST RATE</text>
+      <text x="0" y="68" class="mono" font-size="8" fill="#475569">16.6ms PACKET WINDOW</text>
+    </g>
+
+    <line x1="412" y1="14" x2="412" y2="64" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Metric 3: Voice AI Loop -->
+    <g transform="translate(437, 0)">
+      <text x="0" y="38" class="mono" font-size="28" font-weight="800" fill="#38bdf8">&lt;150ms</text>
+      <text x="0" y="58" class="mono" font-size="9.5" font-weight="700" fill="#94a3b8" letter-spacing="1.5">VOICE AI LOOP</text>
+      <text x="0" y="68" class="mono" font-size="8" fill="#475569">GROQ + EDGE-TTS</text>
+    </g>
+
+    <line x1="620" y1="14" x2="620" y2="64" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Metric 4: Local-First Storage -->
+    <g transform="translate(645, 0)">
+      <text x="0" y="38" class="mono" font-size="28" font-weight="800" fill="#f8fafc">100%</text>
+      <text x="0" y="58" class="mono" font-size="9.5" font-weight="700" fill="#4ade80" letter-spacing="1.5">LOCAL-FIRST</text>
+      <text x="0" y="68" class="mono" font-size="8" fill="#475569">OFFLINE SQLITE ENGINE</text>
+    </g>
+  </g>
+</svg>

@@ -1,67 +1,429 @@
-# Sathwik Elaprolu
+<div align="center">
 
-**Software Engineer | Machine Learning Researcher | Network Protocol Enthusiast**
+  <!-- HERO BANNER (ANIMATED SVG HUD) -->
+  <img src="assets/hero-banner.svg" alt="Sathwik Elaprolu // Systems & Software Engineer" width="100%"/>
 
-**Location:** Hyderabad, India  
-**Affiliation:** St Mary's Engineering College, Deshmukhi  
+  <br/>
 
----
+  <!-- QUICK ACCESS TELEMETRY / ACTION BAR -->
+  <p align="center">
+    <a href="https://sathwik-e-portfolio.vercel.app" target="_blank">
+      <img src="https://img.shields.io/badge/HUD_PORTFOLIO-sathwik--e--portfolio.vercel.app-22c55e?style=for-the-badge&logo=vercel&logoColor=white&labelColor=08090d" alt="Live Portfolio"/>
+    </a>
+    <a href="https://www.linkedin.com/in/sathwik-elaprolu" target="_blank">
+      <img src="https://img.shields.io/badge/CONNECT-LINKEDIN-0077b5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=08090d" alt="LinkedIn Profile"/>
+    </a>
+    <a href="mailto:sathwik.elaprolu@gmail.com">
+      <img src="https://img.shields.io/badge/TRANSMIT-sathwik.elaprolu@gmail.com-ea4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=08090d" alt="Email Direct"/>
+    </a>
+    <img src="https://img.shields.io/badge/STATUS-AVAILABLE_FOR_ROLES-22c55e?style=for-the-badge&logo=statuspal&logoColor=white&labelColor=08090d" alt="Status: Open for Roles"/>
+  </p>
 
-## Professional Focus
+  <img src="assets/divider.svg" alt="Separator" width="100%"/>
 
-I am deeply focused on the intersection of Artificial Intelligence and networked systems. Professionally, I specialize in developing robust Machine Learning models, engineering Natural Language Processing (NLP) solutions, and optimizing routing protocols for the Internet of Things (IoT) and Wireless Sensor Networks (WSN). My goal is to leverage computational models and data science to solve real-world problems, from identifying harmful digital content to building scalable, automated hardware architectures. 
+</div>
 
----
+```
+┌── HOST SYSTEM SPECS ────────────────────────────────────────────────────────────────────────┐
+│  USER: sathwik-e             LOCATION: Hyderabad, IN [17.3850° N, 78.4867° E]               │
+│  AFFILIATION: St Mary's EC   DEGREE: B.Tech Computer Science & Engineering (Class of 2028)  │
+│  CORE ARCHITECTURE:          Low-Latency Systems · Network Protocols · Local-First AI       │
+│  ACTIVE RUNTIME:             60Hz UDP Parsing · Sub-150ms Voice Loops · Zero-Cloud SQLite   │
+└─────────────────────────────────────────────────────────────────────────────────────────────┘
+```
 
-## Contact & Connect
+> **Systems & Software Engineer** focused on low-latency data streams, local-first intelligence, and self-healing automation. I prefer working close to sockets, protocols, and raw data buffers rather than generic CRUD layers—building software designed to stay fast, private, and resilient under real-world data drift.
 
-I am always open to discussing technology, research collaborations, or new career opportunities. 
-
-*   **Email:** [sathwikelaprolu@gmail.com](mailto:sathwikelaprolu@gmail.com)
-*   **Phone:** +91 6304527223
-*   **LinkedIn:** [linkedin.com/in/sathwik-elaprolu](https://www.linkedin.com/in/sathwik-elaprolu)
-*   **GitHub:** [github.com/sathwik-e](https://github.com/sathwik-e)
-
----
-
-## Technical Skills & Languages
-
-*   **Programming Languages:** Python, C, C++ 
-*   **Machine Learning & AI:** Deep Learning, Transformer-based Large Language Models (LLMs), Natural Language Processing (NLP)
-*   **Networking & IoT:** Wireless Sensor Networks (WSN), AODV and DSDV Routing Protocols, IoT-driven architecture, Sensor Integration
-*   **Data Science:** Data Preprocessing, Synthetic Data Generation, Classification Models, Predictive Analytics
-*   **Tools & Version Control:** Git, GitHub, PyTorch, TensorFlow, Scikit-Learn
-
----
-
-## Featured Projects & Research Domains
-
-### 1. NLP and Harmful Content Detection Models
-*   **Description:** Research and development focused on identifying and classifying harmful discourse, such as hate speech and body-shaming, across various social media platforms and languages.
-*   **Core Technologies:** Traditional Machine Learning (ML), Deep Learning (DL), Large Language Models (LLMs), and TF-IDF/SBERT embeddings.
-
-### 2. Wireless Sensor Networks Routing Protocol Evaluation
-*   **Description:** Analytical evaluation and performance enhancement of AODV (Ad hoc On-Demand Distance Vector) and DSDV (Destination-Sequenced Distance-Vector) routing protocols within Wireless Sensor Networks.
-*   **Core Technologies:** Network simulation tools, algorithmic optimization, and node communication analysis.
-
-### 3. Scalable IoT Solutions
-*   **Description:** Exploration and design of scalable Internet of Things (IoT) frameworks for automated management systems, vehicle tracking, and precision applications.
-*   **Core Technologies:** Real-time data processing, hardware-software interfacing, and sensor networking.
+<br/>
 
 ---
 
-## Unique Quirks
+## ■ 00 // SYSTEM BLUEPRINT & CODE ARCHITECTURE
 
-*   **The Coffee-to-Code Ratio:** I operate on a strict, highly optimized caffeine-driven architecture during late-night debugging sessions.
-*   **Protocol Puzzle Solver:** I treat routing protocols and network packet drops like complex detective cases waiting to be solved.
-*   **LLM Translator:** I spend an unreasonable amount of time trying to explain the complexities of Transformer models and neural networks to my non-tech friends and family.
-*   **Compulsive Optimizer:** Whether it is a machine learning epoch or my daily schedule, I am always looking for ways to reduce latency and improve the F1-score of my life.
+> High-frequency telemetry ingestion, zero-copy packet deserialization, and real-time audio dispatch.
+
+<div align="center">
+  <img src="assets/system-blueprint.svg" alt="System Blueprint & Code Architecture" width="100%"/>
+</div>
+
+<details>
+<summary><b>[VIEW RUNTIME SPECIFICATION &amp; DATA PIPELINE BREAKDOWN]</b></summary>
+
+<br/>
+
+```
+  ┌─────────────────┐       ┌─────────────────┐       ┌──────────────────┐       ┌─────────────────┐
+  │   RAW UDP IN    │ ───>  │  DESERIALIZER   │ ───>  │  IN-MEM RING BUF │ ───>  │  HUD / VOICE AI │
+  │ Forza Sim 60Hz  │       │ struct.unpack() │       │ Drop Stale Frames│       │ Groq + Edge-TTS │
+  │ 324 Bytes/pkt   │       │ <0.08ms latency │       │ Zero Buffer Bloat│       │ <150ms Callout  │
+  └─────────────────┘       └─────────────────┘       └──────────────────┘       └─────────────────┘
+```
+
+- **Zero-Copy Ingestion**: Raw binary UDP datagrams are intercepted directly over localhost socket port `20777` without TCP handshake or retransmission overhead.
+- **Strict Frame Budgeting**: Operates within a `16.6ms` window (60Hz). If socket buffers experience backpressure, stale frames are discarded immediately in favor of current vehicle physics state.
+- **Sub-150ms Voice Feedback**: Low-latency token generation via Groq inference engine piped directly into Microsoft Edge-TTS streaming synthesis for live conversational race engineering.
+
+</details>
+
+<br/>
+
+<div align="center">
+  <img src="assets/telemetry-bar.svg" alt="Real-Time Telemetry Feed" width="100%"/>
+</div>
+
+<br/>
 
 ---
 
-## GitHub Statistics
+## ■ 01 // PRODUCTION SYSTEMS & WORK
 
-*   **Total Repositories:** 6
-*   **Account Status:** GitHub Pro
+<table>
+  <thead>
+    <tr>
+      <th align="left" width="30%">SYSTEM</th>
+      <th align="left" width="15%">TAG</th>
+      <th align="left" width="35%">ENGINEERING FOCUS</th>
+      <th align="center" width="20%">SPECS & LINKS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Project 1: Pitwall -->
+    <tr>
+      <td>
+        <b>01. Pitwall</b><br/>
+        <sub>2026 // Production</sub>
+      </td>
+      <td>
+        <code>SYSTEMS</code><br/>
+        <img src="https://img.shields.io/badge/60Hz-UDP-22c55e?style=flat-square&labelColor=08090d" alt="60Hz UDP"/>
+      </td>
+      <td>
+        Live telemetry dashboard for sim racing. Reads raw UDP telemetry from Forza at 60Hz, executes zero-copy unpacking, and narrates live race telemetry through a conversational voice AI crew chief mid-race.
+        <br/><br/>
+        <sub><b>Stack:</b> Python, Flask, WebSockets, Groq API, Edge-TTS</sub>
+      </td>
+      <td align="center">
+        <a href="https://github.com/sathwik-e/pitwall" target="_blank">
+          <img src="https://img.shields.io/badge/REPO-06_COMMITS-1f2937?style=flat-square&logo=github&logoColor=4ade80" alt="Repo"/>
+        </a><br/>
+        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank">
+          <img src="https://img.shields.io/badge/VIEW-LIVE_HUD-22c55e?style=flat-square" alt="Live HUD"/>
+        </a>
+      </td>
+    </tr>
+    <!-- Project 2: Apex AI -->
+    <tr>
+      <td>
+        <b>02. Apex AI</b><br/>
+        <sub>2026 // Research</sub>
+      </td>
+      <td>
+        <code>ACADEMIC ML</code><br/>
+        <img src="https://img.shields.io/badge/ML-REGRESSOR-38bdf8?style=flat-square&labelColor=08090d" alt="ML Regressor"/>
+      </td>
+      <td>
+        Motorsport analytics engine utilizing FastF1 telemetry streams. Predicts non-linear tire compound degradation curves using an ensemble Random Forest Regressor trained on lap deltas, compound age, sector speeds, and dynamic track temperatures.
+        <br/><br/>
+        <sub><b>Stack:</b> Python, FastF1 API, Scikit-Learn, Random Forest, Flask</sub>
+      </td>
+      <td align="center">
+        <a href="https://github.com/sathwik-e/apex-ai" target="_blank">
+          <img src="https://img.shields.io/badge/REPO-02_COMMITS-1f2937?style=flat-square&logo=github&logoColor=4ade80" alt="Repo"/>
+        </a><br/>
+        <img src="https://img.shields.io/badge/PAPER-RESEARCH-6366f1?style=flat-square" alt="Research"/>
+      </td>
+    </tr>
+    <!-- Project 3: MedAssist AI -->
+    <tr>
+      <td>
+        <b>03. MedAssist AI</b><br/>
+        <sub>2025 // Production</sub>
+      </td>
+      <td>
+        <code>AI &amp; VISION</code><br/>
+        <img src="https://img.shields.io/badge/LOCAL-SQLITE-a7f3d0?style=flat-square&labelColor=08090d" alt="Local SQLite"/>
+      </td>
+      <td>
+        Local-first health companion. Extracts structured medication schedules from handwritten doctor prescriptions via client-side Tesseract OCR and Gemini structured verification. Zero cloud leakage with 100% on-device SQLite database storage.
+        <br/><br/>
+        <sub><b>Stack:</b> JavaScript, Node.js, SQLite, Tesseract OCR, Gemini API</sub>
+      </td>
+      <td align="center">
+        <a href="https://github.com/sathwik-e/medassist-ai" target="_blank">
+          <img src="https://img.shields.io/badge/REPO-★_01_STAR-1f2937?style=flat-square&logo=github&logoColor=4ade80" alt="Repo"/>
+        </a><br/>
+        <img src="https://img.shields.io/badge/100%25-PRIVATE-10b981?style=flat-square" alt="Private"/>
+      </td>
+    </tr>
+    <!-- Project 4: Watchdog -->
+    <tr>
+      <td>
+        <b>04. Watchdog</b><br/>
+        <sub>2026 // Hackathon</sub>
+      </td>
+      <td>
+        <code>SCRAPING</code><br/>
+        <img src="https://img.shields.io/badge/HACKATHON-BRIGHT_DATA-f59e0b?style=flat-square&labelColor=08090d" alt="Bright Data"/>
+      </td>
+      <td>
+        Built for the Bright Data Web Scraping Hackathon. Anti-price-gouging automated monitor with resilient scraper pipelines, dynamic proxy mesh rotation, and automated selector failure recovery routines.
+        <br/><br/>
+        <sub><b>Stack:</b> Next.js, TypeScript, Bright Data Scraper Studio, Tailwind CSS</sub>
+      </td>
+      <td align="center">
+        <a href="https://github.com/sathwik-e/watchdog" target="_blank">
+          <img src="https://img.shields.io/badge/REPO-05_COMMITS-1f2937?style=flat-square&logo=github&logoColor=4ade80" alt="Repo"/>
+        </a><br/>
+        <img src="https://img.shields.io/badge/STATUS-SHIPPED-22c55e?style=flat-square" alt="Shipped"/>
+      </td>
+    </tr>
+    <!-- Project 5: Blindfold -->
+    <tr>
+      <td>
+        <b>05. Blindfold</b><br/>
+        <sub>2026 // Automation</sub>
+      </td>
+      <td>
+        <code>AUTOMATION</code><br/>
+        <img src="https://img.shields.io/badge/LOCAL-VLM-c084fc?style=flat-square&labelColor=08090d" alt="Local VLM"/>
+      </td>
+      <td>
+        Autonomous DOM selector self-healing agent. When HTML class trees or obfuscated shadow roots break traditional scrapers, Blindfold captures viewport frames, queries a local Vision-Language Model to re-anchor targets, and patches selector logic on the fly.
+        <br/><br/>
+        <sub><b>Stack:</b> Python, Playwright, Local VLM, FastAPI</sub>
+      </td>
+      <td align="center">
+        <a href="https://github.com/sathwik-e/blindfold" target="_blank">
+          <img src="https://img.shields.io/badge/REPO-★_01_STAR-1f2937?style=flat-square&logo=github&logoColor=4ade80" alt="Repo"/>
+        </a><br/>
+        <img src="https://img.shields.io/badge/94%25%2B-RECOVERY-22c55e?style=flat-square" alt="Recovery"/>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-*Feel free to explore my repositories above to view my source code and technical implementations.*
+<br/>
+
+---
+
+## ■ 02 // ENGINEERING DECISION LOG
+
+> *"Every system has a trade-off — the log shows how I decide."*
+
+<details>
+<summary><b>#001 // Why UDP over TCP for Pitwall?</b> <code>[NETWORKING]</code> <code>Pitwall</code></summary>
+
+<br/>
+
+```ini
+[CONTEXT]   60Hz telemetry = 16.6ms per packet window. Forza sends continuous physics data that expires immediately.
+[TRADEOFF]  TCP retransmissions add 3-12ms of synthetic latency. A retransmitted stale frame is worse than no frame at all.
+[DECISION]  Raw UDP socket with zero-copy struct.unpack(). Drop stale packets immediately, never buffer backlog.
+[RESULT]    Zero synthetic latency at 60fps. Sub-150ms end-to-end voice callout loop.
+```
+
+</details>
+
+<details>
+<summary><b>#002 // Why local-first storage for MedAssist?</b> <code>[STORAGE &amp; PRIVACY]</code> <code>MedAssist AI</code></summary>
+
+<br/>
+
+```ini
+[CONTEXT]   Medical prescriptions contain sensitive PII. Users frequently need access in clinics with spotty connectivity.
+[TRADEOFF]  Cloud databases make multi-device syncing trivial, but introduce attack surfaces, compliance overhead, and latency.
+[DECISION]  Client-side Tesseract OCR with an embedded offline-first SQLite database. Zero unencrypted network hops.
+[RESULT]    100% offline access, instantaneous local queries, and complete zero-knowledge privacy guarantees.
+```
+
+</details>
+
+<details>
+<summary><b>#003 // Local VLM fallback for broken DOM selectors?</b> <code>[AUTOMATION]</code> <code>Blindfold</code></summary>
+
+<br/>
+
+```ini
+[CONTEXT]   Dynamic SPAs, obfuscated CSS classes, and shadow DOMs break hardcoded XPath/CSS selectors unpredictably.
+[TRADEOFF]  Heuristic fuzzy text-matching fails when UI layout labels change; cloud vision APIs are cost-prohibitive at scale.
+[DECISION]  Viewport screenshot capture dispatched to an optimized local Vision-Language Model (VLM) for bounding box re-anchoring.
+[RESULT]    94%+ self-healing recovery rate on broken DOM nodes without stopping production crawler runs.
+```
+
+</details>
+
+<details>
+<summary><b>#004 // Random Forest over Deep Neural Nets for tire degradation?</b> <code>[ML &amp; TELEMETRY]</code> <code>Apex AI</code></summary>
+
+<br/>
+
+```ini
+[CONTEXT]   F1 Pirelli tire wear accelerates non-linearly due to thermal degradation and dirty air vortex shedding.
+[TRADEOFF]  Linear regression underfits the thermal drop-off cliff; deep neural networks overfit on sparse stint telemetry.
+[DECISION]  Ensemble Random Forest Regressor trained on lap deltas, compound age, sector speeds, and surface temperatures.
+[RESULT]    Robust R² prediction on pit-stop windows with zero GPU requirement for real-time race simulations.
+```
+
+</details>
+
+<br/>
+
+<div align="center">
+  <img src="assets/divider.svg" alt="Separator" width="100%"/>
+</div>
+
+<br/>
+
+---
+
+## ■ 03 // TECHNICAL STACK MATRIX
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h4>⚡ SYSTEMS &amp; LOW-LATENCY</h4>
+      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
+      <img src="https://img.shields.io/badge/FastF1_API-E10600?style=flat-square&logo=formula1&logoColor=white"/>
+      <img src="https://img.shields.io/badge/UDP_Sockets-22C55E?style=flat-square&logo=gnubash&logoColor=white"/>
+      <img src="https://img.shields.io/badge/WebSockets-010101?style=flat-square&logo=socketdotio&logoColor=white"/>
+      <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white"/>
+      <br/><br/>
+      <sub>Zero-copy binary unpacking, ring buffers, asynchronous event loops, and telemetry pipelines.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <h4>🌐 WEB &amp; FRONTEND</h4>
+      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+      <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+      <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white"/>
+      <img src="https://img.shields.io/badge/HTML5_Canvas-E34F26?style=flat-square&logo=html5&logoColor=white"/>
+      <br/><br/>
+      <sub>High-density HUD dashboards, terminal-inspired design systems, and responsive SVG telemetry.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h4>🧠 MACHINE LEARNING &amp; AI</h4>
+      <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Local_VLM-8B5CF6?style=flat-square&logo=huggingface&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Tesseract_OCR-5C6BC0?style=flat-square&logo=google&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Groq_API_(<150ms)-F05032?style=flat-square&logo=speedtest&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Gemini_API-4285F4?style=flat-square&logo=google&logoColor=white"/>
+      <br/><br/>
+      <sub>Random Forest regressors, visual grounding models, streaming inference loops, and client OCR.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <h4>💾 DATABASES &amp; AUTOMATION</h4>
+      <img src="https://img.shields.io/badge/SQLite_(Local--First)-003B57?style=flat-square&logo=sqlite&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Headless_Scraping-333333?style=flat-square&logo=googlechrome&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Bright_Data-FF6B00?style=flat-square&logo=databricks&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Git_&_GitHub-F05032?style=flat-square&logo=git&logoColor=white"/>
+      <br/><br/>
+      <sub>Embedded offline relational storage, browser orchestration, and resilient self-healing crawlers.</sub>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+---
+
+## ■ 04 // ENGINEERING MILESTONES & HISTORY
+
+```
+2024 ───────► [ENROLLMENT] B.Tech in Computer Science & Engineering
+              St Mary's Engineering College, Deshmukhi · Focus: Protocols & Distributed Systems
+
+2025 ───────► [SHIPPED] MedAssist AI
+              Local-first health records with client-side OCR & offline SQLite engine
+
+2026 ───────► [RESEARCH] Apex AI Motorsport Telemetry
+              Non-linear tire degradation prediction using FastF1 API & Random Forest
+
+2026 ───────► [SYSTEMS] Pitwall Sim Telemetry HUD
+              60Hz UDP Forza telemetry parser with sub-150ms Groq LLM voice loop
+
+2026 ───────► [HACKATHON & AUTOMATION] Watchdog & Blindfold
+              Bright Data Web Scraping Hackathon + Autonomous VLM selector self-repair
+```
+
+<br/>
+
+<div align="center">
+  <img src="assets/divider.svg" alt="Separator" width="100%"/>
+</div>
+
+<br/>
+
+---
+
+## ■ 05 // TELEMETRY & GITHUB ACTIVITY
+
+<div align="center">
+
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr align="center">
+      <td>
+        <a href="https://github.com/sathwik-e">
+          <img src="https://streak-stats.demolab.com/?user=sathwik-e&theme=dark&background=08090d&ring=22c55e&fire=4ade80&currStreakLabel=4ade80&border=1e293b&border_radius=6" alt="Sathwik's GitHub Streak" width="400"/>
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/sathwik-e">
+          <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=sathwik-e&show_icons=true&theme=dark&bg_color=08090d&title_color=4ade80&text_color=94a3b8&icon_color=22c55e&border_color=1e293b&border_radius=6" alt="Sathwik's GitHub Stats" width="400"/>
+        </a>
+      </td>
+    </tr>
+    <tr align="center">
+      <td colspan="2">
+        <br/>
+        <a href="https://github.com/sathwik-e">
+          <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=sathwik-e&layout=compact&theme=dark&bg_color=08090d&title_color=4ade80&text_color=94a3b8&border_color=1e293b&border_radius=6" alt="Top Languages" width="420"/>
+        </a>
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+<br/>
+
+---
+
+## ■ 06 // TRANSMISSION TERMINAL // CONTACT
+
+> Open for systems engineering roles, low-latency infrastructure projects, and real-time AI pipelines. Reach out with technical problems, timelines, or collaboration proposals.
+
+```
+┌── SECURE TRANSMISSION CHANNELS ────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  DIRECT EMAIL:      sathwik.elaprolu@gmail.com                                         │
+│  PORTFOLIO HUD:     https://sathwik-e-portfolio.vercel.app                             │
+│  LINKEDIN:          https://www.linkedin.com/in/sathwik-elaprolu                       │
+│  GITHUB:            https://github.com/sathwik-e                                       │
+│                                                                                        │
+│  STATUS DISPATCH:   [● ONLINE] // OPEN FOR ROLES & COLLABORATIONS                      │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+<div align="center">
+
+  <p>
+    <a href="mailto:sathwik.elaprolu@gmail.com">
+      <img src="https://img.shields.io/badge/DISPATCH_TRANSMISSION-sathwik.elaprolu@gmail.com-22c55e?style=for-the-badge&logo=gmail&logoColor=white&labelColor=08090d" alt="Send Email"/>
+    </a>
+    &nbsp;
+    <a href="https://sathwik-e-portfolio.vercel.app" target="_blank">
+      <img src="https://img.shields.io/badge/LAUNCH_PORTFOLIO_HUD-22c55e?style=for-the-badge&logo=vercel&logoColor=white&labelColor=08090d" alt="Launch Portfolio"/>
+    </a>
+  </p>
+
+  <br/>
+
+  <sub>
+    DESIGNED WITH PRECISION // MIRRORING <a href="https://sathwik-e-portfolio.vercel.app">SATHWIK-E-PORTFOLIO.VERCEL.APP</a> // RUNTIME NOMINAL ■
+  </sub>
+
+</div>
