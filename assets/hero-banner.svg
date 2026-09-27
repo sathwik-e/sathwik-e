@@ -250,9 +250,9 @@
 
     <!-- Direct Portfolio CTA Pill -->
     <g transform="translate(0, 160)">
-      <rect width="270" height="34" rx="8" fill="#081018" stroke="#52e3a1" stroke-width="1.3" filter="url(#emerald-glow)"/>
+      <rect width="250" height="34" rx="8" fill="#081018" stroke="#52e3a1" stroke-width="1.3" filter="url(#emerald-glow)"/>
       <circle cx="18" cy="17" r="4" fill="#52e3a1"/>
-      <text x="32" y="21.5" class="font-mono" font-size="12" font-weight="700" fill="#52e3a1" letter-spacing="0.6">⚡ LAUNCH PORTFOLIO HUD ↗</text>
+      <text x="32" y="21.5" class="font-mono" font-size="12" font-weight="700" fill="#52e3a1" letter-spacing="0.6">⚡ LIVE PORTFOLIO ↗</text>
     </g>
   </g>
 

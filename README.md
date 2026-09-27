@@ -10,7 +10,7 @@
   <!-- ACTION PILLS & DIRECT CONNECTORS -->
   <p align="center">
     <a href="https://sathwik-e-portfolio.vercel.app" target="_blank">
-      <img src="https://img.shields.io/badge/PORTFOLIO_HUD-ONLINE-52e3a1?style=flat-square&logo=vercel&logoColor=white&labelColor=0a0b0e" alt="Launch Portfolio HUD"/>
+      <img src="https://img.shields.io/badge/PORTFOLIO-ONLINE-52e3a1?style=flat-square&logo=vercel&logoColor=white&labelColor=0a0b0e" alt="Live Portfolio"/>
     </a>
     &nbsp;
     <a href="mailto:sathwik.elaprolu@gmail.com">
@@ -24,7 +24,7 @@
 
   <!-- LIVE TELEMETRY STREAM -->
   <p align="center">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=13&duration=2000&pause=800&color=52E3A1&background=07090E00&center=true&vCenter=true&width=780&height=28&lines=%3E+Ingesting+60Hz+Forza+Motorsport+raw+binary+UDP+telemetry...;%3E+Apex+AI%3A+Predicting+non-linear+Pirelli+F1+tire+degradation...;%3E+Pitwall%3A+Sub-150ms+Groq+voice+AI+crew+chief+radio+dispatch...;%3E+Explore+live+interactive+HUD+blueprints+on+sathwik-e-portfolio.vercel.app..." alt="Live Telemetry Stream"/>
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=13&duration=2000&pause=800&color=52E3A1&background=07090E00&center=true&vCenter=true&width=780&height=28&lines=%3E+Ingesting+60Hz+Forza+Motorsport+raw+binary+UDP+telemetry...;%3E+Apex+AI%3A+Predicting+non-linear+Pirelli+F1+tire+degradation...;%3E+Pitwall%3A+Sub-150ms+Groq+voice+AI+crew+chief+radio+dispatch...;%3E+Explore+live+interactive+systems+on+sathwik-e-portfolio.vercel.app..." alt="Live Telemetry Stream"/>
   </p>
 
 </div>
@@ -47,7 +47,7 @@
         <b>Stack:</b> Python · Flask · WebSockets · Groq LLM
       </p>
       <p>
-        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live HUD Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/pitwall" target="_blank"><b>Repository →</b></a>
+        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/pitwall" target="_blank"><b>Repository →</b></a>
       </p>
     </td>
     <td width="50%" valign="top">
@@ -62,7 +62,7 @@
         <b>Stack:</b> Python · FastF1 · Scikit-Learn · Pandas
       </p>
       <p>
-        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live HUD Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/apex-ai" target="_blank"><b>Repository →</b></a>
+        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/apex-ai" target="_blank"><b>Repository →</b></a>
       </p>
     </td>
   </tr>
@@ -79,7 +79,7 @@
         <b>Stack:</b> Next.js · TypeScript · SQLite · Gemini API
       </p>
       <p>
-        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live HUD Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/MedAssist-AI" target="_blank"><b>Repository →</b></a>
+        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/MedAssist-AI" target="_blank"><b>Repository →</b></a>
       </p>
     </td>
     <td width="50%" valign="top">
@@ -94,7 +94,7 @@
         <b>Stack:</b> Python · Playwright · VLM · Bright Data
       </p>
       <p>
-        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live HUD Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/brightdata-watchdog" target="_blank"><b>Repository →</b></a>
+        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/brightdata-watchdog" target="_blank"><b>Repository →</b></a>
       </p>
     </td>
   </tr>
