@@ -10,7 +10,7 @@
   <!-- ACTION PILLS & DIRECT CONNECTORS -->
   <p align="center">
     <a href="https://sathwik-e-portfolio.vercel.app" target="_blank">
-      <img src="https://img.shields.io/badge/PORTFOLIO-ONLINE-52e3a1?style=flat-square&logo=vercel&logoColor=white&labelColor=0a0b0e" alt="Live Portfolio"/>
+      <img src="https://img.shields.io/badge/PORTFOLIO-ONLINE-52e3a1?style=flat-square&logo=vercel&logoColor=white&labelColor=0a0b0e" alt="Portfolio"/>
     </a>
     &nbsp;
     <a href="mailto:sathwik.elaprolu@gmail.com">
@@ -35,66 +35,38 @@
 
 <table>
   <tr>
-    <td width="50%" valign="top">
-      <h4>🏎️ Pitwall — Real-Time Sim Telemetry</h4>
-      <p>
-        <code>60Hz UDP</code> &nbsp; <code>Voice AI &lt;150ms</code> &nbsp; <code>WebSockets</code>
-      </p>
-      <p style="font-size: 13.5px; color: #8b949e;">
-        High-frequency telemetry engine for sim racing. Ingests raw UDP datagrams at 60Hz, executes zero-copy binary unpacking (<code>struct.unpack</code>), and dispatches race strategy via voice AI crew chief in &lt;150ms.
-      </p>
-      <p style="font-size: 12px;">
-        <b>Stack:</b> Python · Flask · WebSockets · Groq LLM
-      </p>
-      <p>
-        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/pitwall" target="_blank"><b>Repository →</b></a>
+    <td width="50%" align="center">
+      <a href="https://github.com/sathwik-e/pitwall" target="_blank">
+        <img src="assets/card-pitwall.svg" alt="Pitwall — Sim Racing Telemetry" width="100%"/>
+      </a>
+      <p align="center" style="margin: 8px 0 4px 0; font-size: 13px;">
+        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/pitwall" target="_blank"><b>Source Code →</b></a>
       </p>
     </td>
-    <td width="50%" valign="top">
-      <h4>📈 Apex AI — F1 Tire Degradation ML</h4>
-      <p>
-        <code>FastF1 API</code> &nbsp; <code>Random Forest</code> &nbsp; <code>Scikit-Learn</code>
-      </p>
-      <p style="font-size: 13.5px; color: #8b949e;">
-        Formula 1 analytics pipeline. Ingests telemetry streams via FastF1 API and predicts non-linear Pirelli tire compound thermal degradation and optimal pit windows using an ensemble Random Forest regressor.
-      </p>
-      <p style="font-size: 12px;">
-        <b>Stack:</b> Python · FastF1 · Scikit-Learn · Pandas
-      </p>
-      <p>
-        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/apex-ai" target="_blank"><b>Repository →</b></a>
+    <td width="50%" align="center">
+      <a href="https://github.com/sathwik-e/apex-ai" target="_blank">
+        <img src="assets/card-apex.svg" alt="Apex AI — F1 Tire Degradation ML" width="100%"/>
+      </a>
+      <p align="center" style="margin: 8px 0 4px 0; font-size: 13px;">
+        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/apex-ai" target="_blank"><b>Source Code →</b></a>
       </p>
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
-      <h4>🩺 MedAssist AI — Local-First OCR &amp; SQLite</h4>
-      <p>
-        <code>Tesseract OCR</code> &nbsp; <code>Local SQLite</code> &nbsp; <code>Gemini API</code>
-      </p>
-      <p style="font-size: 13.5px; color: #8b949e;">
-        100% on-device prescription entity parser and drug interaction safety check with zero cloud leakage, storing normalized medication schedules directly into client SQLite.
-      </p>
-      <p style="font-size: 12px;">
-        <b>Stack:</b> Next.js · TypeScript · SQLite · Gemini API
-      </p>
-      <p>
-        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/MedAssist-AI" target="_blank"><b>Repository →</b></a>
+    <td width="50%" align="center">
+      <a href="https://github.com/sathwik-e/MedAssist-AI" target="_blank">
+        <img src="assets/card-medassist.svg" alt="MedAssist AI — Local-First OCR" width="100%"/>
+      </a>
+      <p align="center" style="margin: 8px 0 4px 0; font-size: 13px;">
+        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/MedAssist-AI" target="_blank"><b>Source Code →</b></a>
       </p>
     </td>
-    <td width="50%" valign="top">
-      <h4>🛡️ Watchdog — VLM Self-Healing Scraper</h4>
-      <p>
-        <code>Playwright</code> &nbsp; <code>Local VLM</code> &nbsp; <code>Auto-Repair</code>
-      </p>
-      <p style="font-size: 13.5px; color: #8b949e;">
-        Self-repairing web extraction engine recovering 85% of broken storefront queries autonomously via vision-language models when DOM class names obfuscate or shift.
-      </p>
-      <p style="font-size: 12px;">
-        <b>Stack:</b> Python · Playwright · VLM · Bright Data
-      </p>
-      <p>
-        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/brightdata-watchdog" target="_blank"><b>Repository →</b></a>
+    <td width="50%" align="center">
+      <a href="https://github.com/sathwik-e/brightdata-watchdog" target="_blank">
+        <img src="assets/card-watchdog.svg" alt="Watchdog — VLM Self-Healing Scraper" width="100%"/>
+      </a>
+      <p align="center" style="margin: 8px 0 4px 0; font-size: 13px;">
+        <a href="https://sathwik-e-portfolio.vercel.app" target="_blank"><b>Live Demo ↗</b></a> &nbsp;|&nbsp; <a href="https://github.com/sathwik-e/brightdata-watchdog" target="_blank"><b>Source Code →</b></a>
       </p>
     </td>
   </tr>
@@ -122,11 +94,11 @@
 
   <p align="center" style="margin-top: 14px; margin-bottom: 18px;">
     <a href="https://github.com/sathwik-e">
-      <img src="https://streak-stats.demolab.com/?user=sathwik-e&theme=dark&background=0a0b0e&ring=22c55e&fire=22c55e&currStreakLabel=22c55e&currStreakNum=22c55e&sideNums=f0f6fc&sideLabels=8b949e&dates=8b949e&border=21262d&border_radius=6" alt="Sathwik's GitHub Streak" width="410"/>
+      <img src="https://streak-stats.demolab.com/?user=sathwik-e&theme=dark&background=0a0b0e&ring=52e3a1&fire=52e3a1&currStreakLabel=52e3a1&currStreakNum=52e3a1&sideNums=f0f6fc&sideLabels=8b949e&dates=8b949e&border=21262d&border_radius=6" alt="Sathwik's GitHub Streak" width="410"/>
     </a>
     &nbsp;
     <a href="https://github.com/sathwik-e">
-      <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=sathwik-e&show_icons=true&theme=dark&bg_color=0a0b0e&title_color=22c55e&text_color=8b949e&icon_color=22c55e&border_color=21262d&border_radius=6" alt="Sathwik's GitHub Stats" width="410"/>
+      <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=sathwik-e&show_icons=true&theme=dark&bg_color=0a0b0e&title_color=52e3a1&text_color=8b949e&icon_color=52e3a1&border_color=21262d&border_radius=6" alt="Sathwik's GitHub Stats" width="410"/>
     </a>
   </p>
 
