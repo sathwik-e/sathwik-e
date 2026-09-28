@@ -38,7 +38,7 @@
     <td width="50%" valign="top">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
         <a href="https://github.com/sathwik-e/pitwall" target="_blank" style="font-size: 15px; font-weight: 700; color: #f0f6fc;">
-          🏎️ Pitwall — Sim Telemetry
+           Pitwall — Sim Telemetry
         </a>
         <span style="font-family: ui-monospace, monospace; font-size: 10px; color: #52e3a1; border: 1px solid #238636; background: rgba(35,134,54,0.15); padding: 1px 6px; border-radius: 10px;">ONLINE</span>
       </div>
@@ -64,7 +64,7 @@
     <td width="50%" valign="top">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
         <a href="https://github.com/sathwik-e/apex-ai" target="_blank" style="font-size: 15px; font-weight: 700; color: #f0f6fc;">
-          📈 Apex AI — F1 Tire Degradation
+           Apex AI — F1 Tire Degradation
         </a>
         <span style="font-family: ui-monospace, monospace; font-size: 10px; color: #38bdf8; border: 1px solid #1d4ed8; background: rgba(29,78,216,0.15); padding: 1px 6px; border-radius: 10px;">TRAINED</span>
       </div>
@@ -118,7 +118,7 @@
     <td width="50%" valign="top">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
         <a href="https://github.com/sathwik-e/brightdata-watchdog" target="_blank" style="font-size: 15px; font-weight: 700; color: #f0f6fc;">
-          🛡️ Watchdog — VLM Self-Healing Scraper
+           Watchdog — VLM Self-Healing Scraper
         </a>
         <span style="font-family: ui-monospace, monospace; font-size: 10px; color: #f59e0b; border: 1px solid #b45309; background: rgba(180,83,9,0.15); padding: 1px 6px; border-radius: 10px;">AUTONOMOUS</span>
       </div>
@@ -145,7 +145,7 @@
 </table>
 
 <details open>
-  <summary><b>📊 Pitwall Telemetry HUD Architecture View ▾</b></summary>
+  <summary><b> Pitwall Telemetry HUD Architecture View ▾</b></summary>
   <div align="center" style="margin-top: 10px;">
     <img src="assets/motorsport-telemetry-hud.svg" alt="Pitwall Simulation Telemetry HUD" width="100%"/>
   </div>
