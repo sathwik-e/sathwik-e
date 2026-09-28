@@ -194,7 +194,7 @@
 
   <!-- Right Location & Telemetry Badge -->
   <g transform="translate(688, 24)">
-    <rect width="200" height="25" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <rect width="235" height="25" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
     <circle cx="14" cy="12.5" r="3" fill="#38bdf8"/>
     <text x="26" y="16.5" class="font-mono" font-size="10.5" font-weight="600" fill="#94a3b8" letter-spacing="0.5">HYDERABAD, IN · 2026 UTC+5:30</text>
   </g>
@@ -211,14 +211,14 @@
     <!-- Roles / Focus Tags (2 distinct cleanly wrapped lines) -->
     <g transform="translate(0, 78)" class="font-mono" font-size="11.5" font-weight="600">
       <text x="0" y="0">
-        <tspan fill="#52e3a1">🏎️ 60Hz UDP Telemetry</tspan>
+        <tspan fill="#52e3a1"> 60Hz UDP Telemetry</tspan>
         <tspan fill="#475569"> · </tspan>
-        <tspan fill="#38bdf8">⚡ Voice AI (&lt;150ms)</tspan>
+        <tspan fill="#38bdf8"> Voice AI (&lt;150ms)</tspan>
       </text>
       <text x="0" y="18">
-        <tspan fill="#a78bfa">🛡️ Local-First VLM</tspan>
+        <tspan fill="#a78bfa"> Local-First VLM</tspan>
         <tspan fill="#475569"> · </tspan>
-        <tspan fill="#f59e0b">📈 F1 Tire ML Models</tspan>
+        <tspan fill="#f59e0b"> F1 Tire ML Models</tspan>
       </text>
     </g>
 
@@ -228,11 +228,11 @@
       <tspan x="0" dy="18">parsers, and local-first AI agents with strict zero cloud data leakage.</tspan>
     </text>
 
-    <!-- Direct Portfolio CTA Pill (Clean "⚡ PORTFOLIO ↗" with autonomous neon breathing pulse) -->
+    <!-- Direct Portfolio CTA Pill (Clean " PORTFOLIO ↗" with autonomous neon breathing pulse) -->
     <g class="portfolio-btn" transform="translate(0, 160)">
       <rect class="btn-rect" width="200" height="34" rx="8" fill="#161b22" stroke="#52e3a1" stroke-width="1.3"/>
       <circle class="btn-dot" cx="18" cy="17" r="4" fill="#52e3a1"/>
-      <text x="32" y="21.5" class="font-mono" font-size="12" font-weight="700" fill="#52e3a1" letter-spacing="0.8">⚡ PORTFOLIO ↗</text>
+      <text x="32" y="21.5" class="font-mono" font-size="12" font-weight="700" fill="#52e3a1" letter-spacing="0.8"> PORTFOLIO ↗</text>
     </g>
   </g>
 
