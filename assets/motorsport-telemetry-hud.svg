@@ -78,7 +78,7 @@
   </style>
 
   <!-- Panel Base -->
-  <rect x="2" y="2" width="896" height="296" rx="10" fill="#0a0b0e" stroke="url(#hud-border)" stroke-width="1.5"/>
+  <rect x="2" y="2" width="896" height="296" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.2"/>
   <rect x="2" y="2" width="896" height="296" rx="10" fill="url(#hud-grid)"/>
 
   <!-- Top Status Bar -->

@@ -1,62 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 410" width="100%" height="100%">
   <defs>
-    <!-- Background Obsidian Base -->
-    <linearGradient id="bg-base" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#040609"/>
-      <stop offset="50%" stop-color="#070b12"/>
-      <stop offset="100%" stop-color="#04060a"/>
-    </linearGradient>
-
-    <!-- Card High-Tech Border Gradient -->
-    <linearGradient id="card-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#52e3a1" stop-opacity="0.8"/>
-      <stop offset="30%" stop-color="#21262d" stop-opacity="0.4"/>
-      <stop offset="70%" stop-color="#38bdf8" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#52e3a1" stop-opacity="0.25"/>
-    </linearGradient>
-
-    <!-- Deep Ambient Emerald Core Glow -->
-    <radialGradient id="ambient-glow" cx="460" cy="200" r="480" gradientUnits="userSpaceOnUse">
+    <!-- Deep Ambient Emerald Core Glow (Seamlessly fades into GitHub #0d1117 canvas) -->
+    <radialGradient id="ambient-glow" cx="460" cy="205" r="460" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#10b981" stop-opacity="0.08"/>
-      <stop offset="40%" stop-color="#0ea5e9" stop-opacity="0.03"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#0ea5e9" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Wave Grid Mask (Smooth fade at top & edges) -->
-    <linearGradient id="wave-fade-mask" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="25%" stop-color="#ffffff" stop-opacity="0.4"/>
-      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
-    </linearGradient>
+    <!-- Wave Radial Edge Fade Mask (Soft organic dissolve into GitHub canvas) -->
+    <radialGradient id="wave-radial-mask" cx="50%" cy="60%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="80%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
     <mask id="grid-mask">
-      <rect x="0" y="0" width="920" height="410" fill="url(#wave-fade-mask)"/>
+      <rect x="0" y="0" width="920" height="410" fill="url(#wave-radial-mask)"/>
     </mask>
 
-    <!-- Emerald Glow Filters -->
+    <!-- Emerald Glow Filter -->
     <filter id="emerald-glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3.5" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    <filter id="hover-glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="5.0" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
     </filter>
   </defs>
 
   <style>
     <![CDATA[
     .font-sans {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Roboto, Helvetica, Arial, sans-serif;
     }
     .font-mono {
       font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
     }
 
-    /* Continuous Seamless Wave Slide Keyframes */
+    /* Continuous Living Ocean Wave Animation */
     @keyframes wave-slide {
       0% { transform: translate(0px, 0px); }
       100% { transform: translate(-300px, 0px); }
@@ -64,19 +42,17 @@
 
     .wave-primary {
       animation: wave-slide 7.5s linear infinite;
-      transition: opacity 0.4s ease, filter 0.4s ease;
     }
     .wave-secondary {
       animation: wave-slide 11.0s linear infinite;
-      transition: opacity 0.4s ease, filter 0.4s ease;
     }
 
     /* Formula 1 Shift Lights Sequence */
-    @keyframes rev-led-1 { 0%, 15% { fill: #1f2937; } 20%, 82% { fill: #10b981; filter: drop-shadow(0 0 3px #10b981); } 88%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 4px #38bdf8); } }
-    @keyframes rev-led-2 { 0%, 30% { fill: #1f2937; } 35%, 82% { fill: #10b981; filter: drop-shadow(0 0 3px #10b981); } 88%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 4px #38bdf8); } }
-    @keyframes rev-led-3 { 0%, 45% { fill: #1f2937; } 50%, 82% { fill: #f59e0b; filter: drop-shadow(0 0 3px #f59e0b); } 88%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 4px #38bdf8); } }
-    @keyframes rev-led-4 { 0%, 60% { fill: #1f2937; } 65%, 82% { fill: #ef4444; filter: drop-shadow(0 0 3px #ef4444); } 88%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 4px #38bdf8); } }
-    @keyframes rev-led-5 { 0%, 75% { fill: #1f2937; } 80%, 84% { fill: #ef4444; } 88%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 5px #38bdf8); } }
+    @keyframes rev-led-1 { 0%, 15% { fill: #21262d; } 20%, 82% { fill: #10b981; filter: drop-shadow(0 0 3px #10b981); } 88%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 4px #38bdf8); } }
+    @keyframes rev-led-2 { 0%, 30% { fill: #21262d; } 35%, 82% { fill: #10b981; filter: drop-shadow(0 0 3px #10b981); } 88%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 4px #38bdf8); } }
+    @keyframes rev-led-3 { 0%, 45% { fill: #21262d; } 50%, 82% { fill: #f59e0b; filter: drop-shadow(0 0 3px #f59e0b); } 88%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 4px #38bdf8); } }
+    @keyframes rev-led-4 { 0%, 60% { fill: #21262d; } 65%, 82% { fill: #ef4444; filter: drop-shadow(0 0 3px #ef4444); } 88%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 4px #38bdf8); } }
+    @keyframes rev-led-5 { 0%, 75% { fill: #21262d; } 80%, 84% { fill: #ef4444; } 88%, 100% { fill: #38bdf8; filter: drop-shadow(0 0 5px #38bdf8); } }
 
     .rev-1 { animation: rev-led-1 2.2s infinite ease-in-out; }
     .rev-2 { animation: rev-led-2 2.2s infinite ease-in-out; }
@@ -84,7 +60,7 @@
     .rev-4 { animation: rev-led-4 2.2s infinite ease-in-out; }
     .rev-5 { animation: rev-led-5 2.2s infinite ease-in-out; }
 
-    /* Status Dot Pulse */
+    /* Telemetry Status Beacon Pulse */
     @keyframes beacon-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.35; transform: scale(1.35); }
@@ -101,58 +77,36 @@
     }
     .cursor { animation: blink-cursor 1s infinite steps(2, start); }
 
-    /* ================= DYNAMIC HOVER STATE TRANSFORMATION ================= */
-    /* When user hovers over the SVG or portfolio button: wave surges, lights rev, button glows */
-    svg:hover .wave-primary {
-      animation-duration: 2.6s;
-      opacity: 0.65;
-      stroke: #52e3a1;
-      filter: drop-shadow(0 0 3.5px #52e3a1);
+    /* Autonomous Telemetry CTA Neon Glow Pulse */
+    @keyframes pulse-portfolio-btn {
+      0%, 100% {
+        stroke: #52e3a1;
+        filter: drop-shadow(0 0 2px rgba(82, 227, 161, 0.4));
+      }
+      50% {
+        stroke: #6ee7b7;
+        filter: drop-shadow(0 0 8px rgba(82, 227, 161, 0.85));
+      }
     }
-    svg:hover .wave-secondary {
-      animation-duration: 3.9s;
-      opacity: 0.45;
-      stroke: #38bdf8;
-      filter: drop-shadow(0 0 2.5px #38bdf8);
-    }
-    svg:hover .rev-1, svg:hover .rev-2, svg:hover .rev-3, svg:hover .rev-4, svg:hover .rev-5 {
-      animation-duration: 0.9s;
+    .btn-rect {
+      animation: pulse-portfolio-btn 2.4s infinite ease-in-out;
     }
 
-    /* Portfolio Button Hover */
-    .portfolio-btn {
-      cursor: pointer;
-      transition: all 0.25s ease;
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(1.35); }
     }
-    .portfolio-btn:hover rect {
-      fill: #10b981;
-      fill-opacity: 0.35;
-      stroke: #52e3a1;
-      stroke-width: 1.8;
-      filter: url(#hover-glow);
-    }
-    .portfolio-btn:hover text {
-      fill: #ffffff;
-    }
-    .portfolio-btn:hover .btn-dot {
-      fill: #ffffff;
-      filter: drop-shadow(0 0 6px #52e3a1);
-    }
-
-    .metric-pod {
-      transition: all 0.3s ease;
-    }
-    .metric-pod:hover {
-      stroke: #52e3a1;
-      stroke-width: 1.5;
+    .btn-dot {
+      transform-origin: 18px 17px;
+      animation: pulse-dot 2.4s infinite ease-in-out;
     }
     ]]>
   </style>
 
-  <!-- ================= MASTER CONTAINER & BORDER ================= -->
-  <rect x="1" y="1" width="918" height="408" rx="14" ry="14" fill="url(#bg-base)"/>
-  <rect x="1" y="1" width="918" height="408" rx="14" ry="14" fill="url(#ambient-glow)"/>
-  <rect x="1" y="1" width="918" height="408" rx="14" ry="14" fill="none" stroke="url(#card-border)" stroke-width="1.2"/>
+  <!-- ================= MASTER CANVAS CONTAINER ================= -->
+  <!-- 100% Transparent base - blends organically into GitHub's canvas -->
+  <rect width="920" height="410" fill="none"/>
+  <rect width="920" height="410" fill="url(#ambient-glow)"/>
 
   <!-- ================= 3D GERSTNER OCEAN WAVE GRID ================= -->
   <g mask="url(#grid-mask)">
@@ -216,7 +170,7 @@
   <!-- ================= TOP STATUS & TELEMETRY BAR ================= -->
   <!-- Left Status Pill -->
   <g transform="translate(32, 24)">
-    <rect width="215" height="25" rx="6" fill="#0d131d" stroke="#212936" stroke-width="1"/>
+    <rect width="215" height="25" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
     <circle class="beacon" cx="13" cy="12.5" r="4" fill="#52e3a1"/>
     <circle cx="13" cy="12.5" r="2.5" fill="#52e3a1"/>
     <text x="26" y="16.5" class="font-mono" font-size="10.5" font-weight="600" fill="#e2e8f0" letter-spacing="0.5">PITWALL // SYSTEMS ONLINE</text>
@@ -224,24 +178,23 @@
 
   <!-- Center Formula 1 Shift Lights Race Cluster -->
   <g transform="translate(390, 24)">
-    <!-- Carbon fiber style cluster bezel -->
-    <rect width="140" height="25" rx="6" fill="#0b0f17" stroke="#1f2937" stroke-width="1"/>
+    <rect width="140" height="25" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
     <!-- 10 LEDs: 4 Green, 2 Amber, 2 Red, 2 Blue -->
-    <circle class="rev-1" cx="16" cy="12.5" r="3.5" fill="#1f2937"/>
-    <circle class="rev-1" cx="29" cy="12.5" r="3.5" fill="#1f2937"/>
-    <circle class="rev-2" cx="42" cy="12.5" r="3.5" fill="#1f2937"/>
-    <circle class="rev-2" cx="55" cy="12.5" r="3.5" fill="#1f2937"/>
-    <circle class="rev-3" cx="68" cy="12.5" r="3.5" fill="#1f2937"/>
-    <circle class="rev-3" cx="81" cy="12.5" r="3.5" fill="#1f2937"/>
-    <circle class="rev-4" cx="94" cy="12.5" r="3.5" fill="#1f2937"/>
-    <circle class="rev-4" cx="107" cy="12.5" r="3.5" fill="#1f2937"/>
-    <circle class="rev-5" cx="120" cy="12.5" r="3.5" fill="#1f2937"/>
-    <circle class="rev-5" cx="131" cy="12.5" r="3.5" fill="#1f2937"/>
+    <circle class="rev-1" cx="16" cy="12.5" r="3.5" fill="#21262d"/>
+    <circle class="rev-1" cx="29" cy="12.5" r="3.5" fill="#21262d"/>
+    <circle class="rev-2" cx="42" cy="12.5" r="3.5" fill="#21262d"/>
+    <circle class="rev-2" cx="55" cy="12.5" r="3.5" fill="#21262d"/>
+    <circle class="rev-3" cx="68" cy="12.5" r="3.5" fill="#21262d"/>
+    <circle class="rev-3" cx="81" cy="12.5" r="3.5" fill="#21262d"/>
+    <circle class="rev-4" cx="94" cy="12.5" r="3.5" fill="#21262d"/>
+    <circle class="rev-4" cx="107" cy="12.5" r="3.5" fill="#21262d"/>
+    <circle class="rev-5" cx="120" cy="12.5" r="3.5" fill="#21262d"/>
+    <circle class="rev-5" cx="131" cy="12.5" r="3.5" fill="#21262d"/>
   </g>
 
   <!-- Right Location & Telemetry Badge -->
   <g transform="translate(688, 24)">
-    <rect width="200" height="25" rx="6" fill="#0d131d" stroke="#212936" stroke-width="1"/>
+    <rect width="200" height="25" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
     <circle cx="14" cy="12.5" r="3" fill="#38bdf8"/>
     <text x="26" y="16.5" class="font-mono" font-size="10.5" font-weight="600" fill="#94a3b8" letter-spacing="0.5">HYDERABAD, IN · 2026 UTC+5:30</text>
   </g>
@@ -275,9 +228,9 @@
       <tspan x="0" dy="18">parsers, and local-first AI agents with strict zero cloud data leakage.</tspan>
     </text>
 
-    <!-- Direct Portfolio CTA Pill (Clean "⚡ PORTFOLIO ↗" with interactive hover surge) -->
+    <!-- Direct Portfolio CTA Pill (Clean "⚡ PORTFOLIO ↗" with autonomous neon breathing pulse) -->
     <g class="portfolio-btn" transform="translate(0, 160)">
-      <rect width="200" height="34" rx="8" fill="#081018" stroke="#52e3a1" stroke-width="1.3" filter="url(#emerald-glow)"/>
+      <rect class="btn-rect" width="200" height="34" rx="8" fill="#161b22" stroke="#52e3a1" stroke-width="1.3"/>
       <circle class="btn-dot" cx="18" cy="17" r="4" fill="#52e3a1"/>
       <text x="32" y="21.5" class="font-mono" font-size="12" font-weight="700" fill="#52e3a1" letter-spacing="0.8">⚡ PORTFOLIO ↗</text>
     </g>
@@ -285,13 +238,13 @@
 
   <!-- Right Side: Interactive Telemetry Terminal Window (x=495, w=390) -->
   <g transform="translate(495, 75)">
-    <!-- Terminal Shell Glassmorphism Card -->
-    <rect width="390" height="194" rx="10" ry="10" fill="#090d14" fill-opacity="0.88" stroke="#212a38" stroke-width="1.2"/>
-    <rect width="390" height="194" rx="10" ry="10" fill="none" stroke="#52e3a1" stroke-opacity="0.3" stroke-width="1"/>
+    <!-- Terminal Shell GitHub-Matched Window Card -->
+    <rect width="390" height="194" rx="10" ry="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <rect width="390" height="194" rx="10" ry="10" fill="none" stroke="#52e3a1" stroke-opacity="0.35" stroke-width="1"/>
 
     <!-- Window Title Bar -->
-    <path d="M 0 10 C 0 4.477 4.477 0 10 0 L 380 0 C 385.523 0 390 4.477 390 10 L 390 30 L 0 30 Z" fill="#0e131d"/>
-    <line x1="0" y1="30" x2="390" y2="30" stroke="#1f2937" stroke-width="1"/>
+    <path d="M 0 10 C 0 4.477 4.477 0 10 0 L 380 0 C 385.523 0 390 4.477 390 10 L 390 30 L 0 30 Z" fill="#0d1117"/>
+    <line x1="0" y1="30" x2="390" y2="30" stroke="#30363d" stroke-width="1"/>
 
     <!-- macOS Action Dots -->
     <circle cx="16" cy="15" r="4.5" fill="#ef4444"/>
@@ -312,7 +265,7 @@
       
       <text x="0" y="104" fill="#38bdf8">&gt; Telemetry Stream: <tspan fill="#52e3a1">60Hz SYNCHRONIZED</tspan> <tspan fill="#64748b">[0 PKT LOSS]</tspan><tspan class="cursor" fill="#52e3a1">_</tspan></text>
       
-      <rect x="-2" y="116" width="360" height="18" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="0.8"/>
+      <rect x="-2" y="116" width="360" height="18" rx="4" fill="#0d1117" stroke="#30363d" stroke-width="0.8"/>
       <text x="6" y="129" fill="#10b981" font-size="9.5" font-weight="600">● 60 FPS HUD SYNC · 0.04s TIRE SLIP · P1 OVERALL</text>
     </g>
   </g>
@@ -320,28 +273,28 @@
   <!-- ================= BOTTOM TELEMETRY METRIC PODS ================= -->
   <!-- Pod 1: Production Systems -->
   <g transform="translate(36, 305)">
-    <rect class="metric-pod" width="194" height="74" rx="8" fill="#090d14" fill-opacity="0.88" stroke="#1e2634" stroke-width="1"/>
+    <rect class="metric-pod" width="194" height="74" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
     <text x="16" y="32" class="font-mono" font-size="21" font-weight="800" fill="#52e3a1">04 SYSTEMS</text>
     <text x="16" y="52" class="font-sans" font-size="11.5" font-weight="500" fill="#94a3b8">Architected &amp; Deployed</text>
   </g>
 
   <!-- Pod 2: 60Hz UDP Ingest -->
   <g transform="translate(248, 305)">
-    <rect class="metric-pod" width="194" height="74" rx="8" fill="#090d14" fill-opacity="0.88" stroke="#1e2634" stroke-width="1"/>
+    <rect class="metric-pod" width="194" height="74" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
     <text x="16" y="32" class="font-mono" font-size="21" font-weight="800" fill="#38bdf8">60Hz UDP</text>
     <text x="16" y="52" class="font-sans" font-size="11.5" font-weight="500" fill="#94a3b8">Raw Binary Ingest Rate</text>
   </g>
 
   <!-- Pod 3: Voice AI Latency -->
   <g transform="translate(460, 305)">
-    <rect class="metric-pod" width="194" height="74" rx="8" fill="#090d14" fill-opacity="0.88" stroke="#1e2634" stroke-width="1"/>
+    <rect class="metric-pod" width="194" height="74" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
     <text x="16" y="32" class="font-mono" font-size="21" font-weight="800" fill="#52e3a1">&lt;150ms</text>
     <text x="16" y="52" class="font-sans" font-size="11.5" font-weight="500" fill="#94a3b8">Voice AI Strategy Radio</text>
   </g>
 
   <!-- Pod 4: 100% Privacy -->
   <g transform="translate(672, 305)">
-    <rect class="metric-pod" width="212" height="74" rx="8" fill="#090d14" fill-opacity="0.88" stroke="#1e2634" stroke-width="1"/>
+    <rect class="metric-pod" width="212" height="74" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
     <text x="16" y="32" class="font-mono" font-size="21" font-weight="800" fill="#a78bfa">100% PRIVATE</text>
     <text x="16" y="52" class="font-sans" font-size="11.5" font-weight="500" fill="#94a3b8">Local-First SQLite &amp; OCR</text>
   </g>
